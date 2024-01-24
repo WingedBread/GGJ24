@@ -60,10 +60,7 @@ namespace KinematicCharacterController.Walkthrough.BasicMovement
             }
 
             // Input for zooming the camera (disabled in WebGL because it can cause problems)
-            float scrollInput = -Input.GetAxis(MouseScrollInput);
-#if UNITY_WEBGL
-        scrollInput = 0f;
-#endif
+            float scrollInput = 0.0f;
 
             // Apply inputs to the camera
             OrbitCamera.UpdateWithInput(Time.deltaTime, scrollInput, lookInputVector);
