@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     private InteractableBehaviour _hightlightedInteractable;
 
     private bool _interactionModeEnabled;
+    private InteractableBehaviour _interactionModeInteractable;
 
     private void Awake()
     {
@@ -76,7 +77,9 @@ public class GameManager : MonoBehaviour
         _interactionModeEnabled = true;
         _interactionModeLabel.SetActive(true);
         _player.DisableInput();
+        _interactionModeInteractable = interactable;
 
+        interactable.SetInteractionMode(_camera);
     }
 
     private void ExitInteractionMode()
@@ -84,6 +87,8 @@ public class GameManager : MonoBehaviour
         _interactionModeEnabled = false;
         _interactionModeLabel.SetActive(false);
         _player.EnableInput();
+
+        _interactionModeInteractable.UnsetInteractionMode();
     }
 
 }

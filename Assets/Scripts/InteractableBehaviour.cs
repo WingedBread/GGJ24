@@ -5,8 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(Outline))]
 public class InteractableBehaviour : MonoBehaviour
 {
+
     [SerializeField]
+    private Transform _interactionModeTransform;
+
     private Outline _outline;
+    private Transform _originalParent;
+    private Vector3 _originalLocalPosition;
+    private Quaternion _originalLocalRotation;
 
     private void Awake()
     {
@@ -35,5 +41,22 @@ public class InteractableBehaviour : MonoBehaviour
     public void Interact()
     {
         Debug.Log("Interacting");
+    }
+
+    public void SetInteractionMode(Camera camera)
+    {
+        _originalParent = transform.parent;
+        _originalLocalPosition = transform.localPosition;
+        _originalLocalRotation = transform.localRotation;
+
+        Quaternion interactionModeRotation = _interactionModeTransform != null ? Quaternion.Inverse(_interactionModeTransform.localRotation) : Quaternion.identity;
+        transform.SetParent(camera.transform, worldPositionStays: false);
+        transform.SetLocalPositionAndRotation(1.5f * Vector3.forward, interactionModeRotation);
+    }
+
+    public void UnsetInteractionMode()
+    {
+        transform.SetParent(_originalParent, worldPositionStays: false);
+        transform.SetLocalPositionAndRotation(_originalLocalPosition, _originalLocalRotation);
     }
 }
