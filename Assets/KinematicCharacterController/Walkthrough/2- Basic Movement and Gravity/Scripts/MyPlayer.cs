@@ -19,6 +19,8 @@ namespace KinematicCharacterController.Walkthrough.BasicMovement
         private const string HorizontalInput = "Horizontal";
         private const string VerticalInput = "Vertical";
 
+        private bool InputEnabled;
+
         private void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -29,6 +31,8 @@ namespace KinematicCharacterController.Walkthrough.BasicMovement
             // Ignore the character's collider(s) for camera obstruction checks
             OrbitCamera.IgnoredColliders.Clear();
             OrbitCamera.IgnoredColliders.AddRange(Character.GetComponentsInChildren<Collider>());
+
+            InputEnabled = true;
         }
 
         private void Update()
@@ -38,12 +42,18 @@ namespace KinematicCharacterController.Walkthrough.BasicMovement
                 Cursor.lockState = CursorLockMode.Locked;
             }
 
-            HandleCharacterInput();
+            if (InputEnabled)
+            {
+                HandleCharacterInput();
+            }
         }
 
         private void LateUpdate()
         {
-            HandleCameraInput();
+            if (InputEnabled)
+            {
+                HandleCameraInput();
+            }
         }
 
         private void HandleCameraInput()
@@ -83,6 +93,16 @@ namespace KinematicCharacterController.Walkthrough.BasicMovement
 
             // Apply inputs to character
             Character.SetInputs(ref characterInputs);
+        }
+
+        public void EnableInput()
+        {
+            InputEnabled = true;
+        }
+
+        public void DisableInput()
+        {
+            InputEnabled = false;
         }
     }
 }
