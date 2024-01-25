@@ -37,11 +37,6 @@ namespace KinematicCharacterController.Walkthrough.BasicMovement
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-
             if (InputEnabled)
             {
                 HandleCharacterInput();
