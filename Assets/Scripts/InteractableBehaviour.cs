@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Outline))]
 public class InteractableBehaviour : MonoBehaviour
 {
     [SerializeField]
@@ -11,17 +10,19 @@ public class InteractableBehaviour : MonoBehaviour
     private bool _canBeRotated;
     [SerializeField]
     private Vector2Reference _rotationSens;
+    [SerializeField]
+    private Outline _modelOutline;
 
-    private Outline _outline;
     private Transform _originalParent;
     private Vector3 _originalLocalPosition;
     private Quaternion _originalLocalRotation;
     private bool _interactionModeEnabled;
     private Camera _camera;
+    private bool _dragging;
 
     private void Awake()
     {
-        _outline = GetComponent<Outline>();
+        _dragging = false;
         _interactionModeEnabled = false;
     }
 
@@ -31,12 +32,32 @@ public class InteractableBehaviour : MonoBehaviour
     private IEnumerator Start()
     {
         yield return null;
-        _outline.enabled = false;
+        _modelOutline.enabled = false;
     }
 
-    private void OnMouseDrag()
+    private void Update()
     {
-        if (!_canBeRotated || !_interactionModeEnabled)
+        if (!_interactionModeEnabled || !_canBeRotated)
+            return;
+
+        if (Input.GetMouseButtonDown(0))
+            BeginDrag();
+
+        if (Input.GetMouseButtonUp(0))
+            EndDrag();
+
+        Drag();
+    }
+
+    private void BeginDrag()
+    {
+        _dragging = true;
+        //Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    private void Drag()
+    {
+        if (!_dragging)
             return;
 
         Vector3 delta = Input.mousePositionDelta;
@@ -44,14 +65,20 @@ public class InteractableBehaviour : MonoBehaviour
         transform.RotateAround(_camera.transform.right, delta.y * _rotationSens.value.y);
     }
 
+    private void EndDrag()
+    {
+        //Cursor.lockState = CursorLockMode.Confined;
+        _dragging = false;
+    }
+
     public void EnableHighlight()
     {
-        _outline.enabled = true;
+        _modelOutline.enabled = true;
     }
 
     public void DisableHighlight()
     {
-        _outline.enabled = false;
+        _modelOutline.enabled = false;
     }
 
     public void Interact()

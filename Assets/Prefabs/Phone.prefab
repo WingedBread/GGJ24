@@ -335,9 +335,9 @@ MonoBehaviour:
     contactName: 1
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
-    messageType: 1
-    messageText: "\xBFTe ha dicho maurice que hacen una barbacoa (Ampliamos informaci\xF3n
-      sobre el evento) por el cumplea\xF1os de su hijo? Yo voy a ir."
+    messageType: 2
+    messageText: "\xBFTe ha dicho maurice que hacen una barbacoa por el cumplea\xF1os
+      de su hijo? Yo voy a ir."
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 1
@@ -398,8 +398,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 103.095215}
-  m_SizeDelta: {x: 0, y: -206.1904}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &680466563658628977
 CanvasRenderer:
@@ -607,12 +607,12 @@ RectTransform:
   m_Children:
   - {fileID: 8451351651819440263}
   - {fileID: 4883456579773147047}
-  m_Father: {fileID: 6305363841841977116}
+  m_Father: {fileID: 1129573465449949552}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 509.4969}
-  m_SizeDelta: {x: 0, y: -1019.012}
+  m_AnchoredPosition: {x: 0, y: -87.602}
+  m_SizeDelta: {x: 0, y: -175.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3003661211972313322
 GameObject:
@@ -757,7 +757,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 418.16687, y: 808.12146}
+  m_AnchoredPosition: {x: 418.16687, y: 675}
   m_SizeDelta: {x: 189.6663, y: 86.6356}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5632617210870929105
@@ -781,7 +781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1074,6 +1074,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6305363841841977116}
+  - component: {fileID: 7670528907653196077}
+  - component: {fileID: 1088206895442565918}
   m_Layer: 6
   m_Name: Content
   m_TagString: Untagged
@@ -1092,15 +1094,54 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7698740077284093118}
+  m_Children: []
   m_Father: {fileID: 7440972062642206646}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 2763.802}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &7670528907653196077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4887602693053117800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 30
+    m_Right: 0
+    m_Top: 30
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 30
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &1088206895442565918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4887602693053117800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &5514705265501312285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,8 +1216,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1347,6 +1388,7 @@ RectTransform:
   - {fileID: 784288114381279975}
   - {fileID: 680830274096683832}
   - {fileID: 5103946115813183277}
+  - {fileID: 7698740077284093118}
   m_Father: {fileID: 6857122962271603242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
