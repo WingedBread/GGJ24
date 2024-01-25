@@ -309,13 +309,57 @@ MonoBehaviour:
     contactPhoto: {fileID: 21300000, guid: 4ac56e35e61b5984d966c3e5cce0afc0, type: 3}
     messageType: 0
     messageText: Maurice te ha enviado una foto.
-    messageImage: {fileID: 21300000, guid: b9f7c5e269333ac4e87dbb6d7cecf669, type: 3}
+    messageImage: {fileID: 21300000, guid: ca4360d4101313b42acc23df36130ea8, type: 3}
   - sender: 1
     contactName: 0
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 4ac56e35e61b5984d966c3e5cce0afc0, type: 3}
     messageType: 3
     messageText: "Hola maurice... puede que me pase, s\xED."
+    messageImage: {fileID: 0}
+  - sender: 0
+    contactName: 1
+    contactStatus: 0
+    contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
+    messageType: 3
+    messageText: "\xA1Holaa!, \xA1mira qu\xE9 chulos!"
+    messageImage: {fileID: 0}
+  - sender: 0
+    contactName: 1
+    contactStatus: 0
+    contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
+    messageType: 0
+    messageText: Eli te ha enviado una foto.
+    messageImage: {fileID: 21300000, guid: 4dd3c9d328e3ba741ac93014811aeb45, type: 3}
+  - sender: 0
+    contactName: 1
+    contactStatus: 0
+    contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
+    messageType: 1
+    messageText: "\xBFTe ha dicho maurice que hacen una barbacoa (Ampliamos informaci\xF3n
+      sobre el evento) por el cumplea\xF1os de su hijo? Yo voy a ir."
+    messageImage: {fileID: 0}
+  - sender: 0
+    contactName: 1
+    contactStatus: 0
+    contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
+    messageType: 2
+    messageText: "Estar\xEDa bien que nos vi\xE9ramos despu\xE9s de tanto tiempo.
+      Espero verte ah\xED."
+    messageImage: {fileID: 0}
+  - sender: 0
+    contactName: 1
+    contactStatus: 0
+    contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
+    messageType: 3
+    messageText: "Te vendr\xE1 bien."
+    messageImage: {fileID: 0}
+  - sender: 1
+    contactName: 1
+    contactStatus: 0
+    contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
+    messageType: 3
+    messageText: ok
     messageImage: {fileID: 0}
   imageFullScreen: {fileID: 2713098880759688167}
   replyButton: {fileID: 3853387889370938683}

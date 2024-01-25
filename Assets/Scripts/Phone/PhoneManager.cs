@@ -7,6 +7,7 @@ using System;
 using Unity.VisualScripting;
 using UnityEditor.VersionControl;
 using UnityEngine.Rendering;
+using System.Linq;
 
 public class PhoneManager : MonoBehaviour
 {
@@ -113,7 +114,7 @@ public class PhoneManager : MonoBehaviour
 
     public void OpenImageFullScreen()
     {
-        imageFullScreen.transform.SetSiblingIndex(imageFullScreen.transform.childCount+1);
+        imageFullScreen.transform.SetSiblingIndex(imageFullScreen.transform.parent.childCount);
         imageFullScreen.SetActive(true);
         scrollRect.vertical = false;
     }
@@ -162,8 +163,7 @@ public class PhoneManager : MonoBehaviour
 
             message.transform.SetParent(scrollViewContent.transform, false);
 
-
-            if (currentMessage == 0) message.transform.localPosition = new Vector3(22, -45, 0);
+            if (currentMessage == 0 || currentMessage == 4) message.transform.localPosition = new Vector3(22, -45, 0);
             else
             {
                 message.transform.localPosition =
@@ -171,7 +171,6 @@ public class PhoneManager : MonoBehaviour
             }
 
             allmesages.Add(message);
-
             
             audioSource.Play(); 
 
@@ -185,5 +184,7 @@ public class PhoneManager : MonoBehaviour
         {
             Destroy(go);
         }
+        hasPlayerFinishedMessaging = false;
+        replyButton.interactable = true;
     }
 }
