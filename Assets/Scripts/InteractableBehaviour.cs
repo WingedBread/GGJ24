@@ -52,7 +52,7 @@ public class InteractableBehaviour : MonoBehaviour
     private void BeginDrag()
     {
         _dragging = true;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Drag()
@@ -67,7 +67,7 @@ public class InteractableBehaviour : MonoBehaviour
 
     private void EndDrag()
     {
-        Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.lockState = CursorLockMode.Confined;
         _dragging = false;
     }
 
