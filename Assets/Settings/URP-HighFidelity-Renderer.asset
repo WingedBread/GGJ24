@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a864f588276bab54f97335821add48a7, type: 3}
   m_Name: LimSSR
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   Settings:
     tracingMode: 0
     stepStrideLength: 0.5

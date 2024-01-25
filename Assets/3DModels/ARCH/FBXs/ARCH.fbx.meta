@@ -7,6 +7,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door
+    second: {fileID: 2100000, guid: 6dc71bf4413bdda48b31a0b9fc0705da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MainDoor
+    second: {fileID: 2100000, guid: 53ffb248928769949b63de791c6aa51d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Placeholder
     second: {fileID: 2100000, guid: 27c5c19f7e47a8d468fedb7056db5cc9, type: 2}
   - first:
@@ -16,8 +26,8 @@ ModelImporter:
     second: {fileID: 2100000, guid: d5a03ef9c94860d428b096e093db006e, type: 2}
   materials:
     materialImportMode: 2
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
