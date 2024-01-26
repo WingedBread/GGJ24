@@ -65,8 +65,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -979640028351399868, guid: 5f9ac853adea4cf47a46b2c1bbce3e9d,
         type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -979640028351399868, guid: 5f9ac853adea4cf47a46b2c1bbce3e9d,
+        type: 3}
       propertyPath: m_StaticShadowCaster
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5f9ac853adea4cf47a46b2c1bbce3e9d,
         type: 3}
@@ -81,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 5417456652695486853, guid: 5f9ac853adea4cf47a46b2c1bbce3e9d,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 127
+      value: 64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -24,6 +24,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Roof
     second: {fileID: 2100000, guid: d5a03ef9c94860d428b096e093db006e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WindowGlass
+    second: {fileID: 2100000, guid: 7ec3be98151272741b999351aeb640a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windows
+    second: {fileID: 2100000, guid: 85a1b0f02e1706b4b86eac6a34f18219, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1

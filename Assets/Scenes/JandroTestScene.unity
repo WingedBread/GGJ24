@@ -1337,6 +1337,21 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: -7560066243188634301, guid: 2d6bac215b3238e48bc09842860fac91,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -4981886941177912499, guid: 2d6bac215b3238e48bc09842860fac91,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4574738050372528787, guid: 2d6bac215b3238e48bc09842860fac91,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -3707980837821937155, guid: 2d6bac215b3238e48bc09842860fac91,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1357,6 +1372,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2873380853902670577, guid: 2d6bac215b3238e48bc09842860fac91,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -2273994303938589181, guid: 2d6bac215b3238e48bc09842860fac91,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1376,6 +1396,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ARCH
+      objectReference: {fileID: 0}
+    - target: {fileID: 2005229715816757442, guid: 2d6bac215b3238e48bc09842860fac91,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5769484663829117588, guid: 2d6bac215b3238e48bc09842860fac91,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6600721371994189572, guid: 2d6bac215b3238e48bc09842860fac91,
         type: 3}
@@ -1803,6 +1833,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5025074236864327173, guid: ed15e1e7d7b68ce418c0c842dc7b6f00,
+        type: 3}
+      propertyPath: m_LightmapParameters
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6194572336798897514, guid: ed15e1e7d7b68ce418c0c842dc7b6f00,
         type: 3}
       propertyPath: m_LocalPosition.x
