@@ -17,6 +17,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Nevera
+    second: {fileID: 2100000, guid: f44e8cd7a6999af4a8f1fea09a61a4ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Placeholder
     second: {fileID: 2100000, guid: 27c5c19f7e47a8d468fedb7056db5cc9, type: 2}
   - first:
