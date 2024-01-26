@@ -756,6 +756,7 @@ MonoBehaviour:
   _blackoutAlphaDuration: 1
   _audioSource: {fileID: 2041522723}
   _audioClip: {fileID: 8300000, guid: 41f0dd34d3971f945abaadf44392ec62, type: 3}
+  _initialSceneBuildIndex: 1
 --- !u!4 &1321864310
 Transform:
   m_ObjectHideFlags: 0

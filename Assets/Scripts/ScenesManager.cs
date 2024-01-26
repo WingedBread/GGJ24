@@ -16,11 +16,12 @@ public class ScenesManager : MonoBehaviour
     [SerializeField]
     private AudioClip _audioClip;
 
+    [SerializeField]
+    private int _initialSceneBuildIndex;
+
     private Scene _currentScene;
-
     private int _sceneToLoadBuildIndex;
-    private bool _firstSceneLoad;
-
+    private bool _isInitialSceneLoad;
     private bool _loadingComplete;
     private bool _audiosComplete;
 
@@ -29,8 +30,8 @@ public class ScenesManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.sceneUnloaded += OnSceneUnloaded;
 
-        _firstSceneLoad = true;
-        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive); // TODO: Make these proper constants
+        _isInitialSceneLoad = true;
+        SceneManager.LoadSceneAsync(_initialSceneBuildIndex, LoadSceneMode.Additive); // TODO: Make these proper constants
     }
 
     private void OnDestroy()
@@ -66,9 +67,9 @@ public class ScenesManager : MonoBehaviour
         _currentScene = loadedScene;
         SceneManager.SetActiveScene(loadedScene);
 
-        if (_firstSceneLoad)
+        if (_isInitialSceneLoad)
         {
-            _firstSceneLoad = false;
+            _isInitialSceneLoad = false;
             return;
         }
 
