@@ -12,6 +12,21 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: FSCMetalTreated
+    second: {fileID: 2100000, guid: 7e4886f2b6293e740b9b62128e4d8a47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FSCPaintWallsDarkGrey
+    second: {fileID: 2100000, guid: 6b116b5b7f9aa884f8e993e0b9ef47b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FSCWoodCarpentry
+    second: {fileID: 2100000, guid: 8329c07b27127c84ba11aede6e433ae5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: MainDoor
     second: {fileID: 2100000, guid: 53ffb248928769949b63de791c6aa51d, type: 2}
   - first:
@@ -27,8 +42,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: PorcelainCeramicTile
+    second: {fileID: 2100000, guid: 49c941d4ad506254392cd94db5d4dba1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PorcelainCounterTop
+    second: {fileID: 2100000, guid: 3a857d1b3574565438b9f8963c1776ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PorcelainFloorTile
+    second: {fileID: 2100000, guid: 28d05eae1b4120c4487cb5e9b83775aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Roof
     second: {fileID: 2100000, guid: d5a03ef9c94860d428b096e093db006e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhiteWood_Furniture
+    second: {fileID: 2100000, guid: 3cb5e71231f30c14895dcd2966dff3c6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
