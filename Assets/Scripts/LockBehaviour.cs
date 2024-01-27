@@ -1,15 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 [ExecuteInEditMode]
 public class LockBehaviour : MonoBehaviour
 {
     [SerializeField]
     private List<int> _expectedCombination;
-
     [SerializeField]
     private List<LockDialBehaviour> _lockDials;
+    [SerializeField]
+    private Transform _wireTransform;
+    private AudioSource _audioSource;
+
+    private bool _isOpen;
+
+    private void Awake()
+    {
+        _isOpen = false;
+        _audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.L))
+            OpenSomething();
+    }
 
     public bool CombinationIsCorrect()
     {
@@ -32,13 +49,27 @@ public class LockBehaviour : MonoBehaviour
 
     public void OpenSomething()
     {
+        if (_isOpen)
+            return;
+
         if (!CombinationIsCorrect())
         {
             Debug.Log("[LockBehaviour] NOT OPENED");
+            Debug.Log("EXPECTED COMBINATION");
+            foreach (int number in _expectedCombination)
+                Debug.Log(number);
+            Debug.Log("ENTERED COMBINATION");
+            foreach (LockDialBehaviour lockDial in _lockDials)
+                Debug.Log(lockDial.GetCurrentNumber());
             return /* false*/;
         }
-
+        
+        _isOpen = true;
         Debug.Log("[LockBehaviour] OPENED");
+        DOTween.Sequence()
+            .Append(_wireTransform.DOBlendableLocalMoveBy(new Vector3(0.0f, 0.002f, 0.0f), 0.5f))
+            .Append(_wireTransform.DOLocalRotate(new Vector3(0.0f, 130.0f , 0.0f), 0.5f));
+        _audioSource.Play();
         return /* true*/;
     }
 }

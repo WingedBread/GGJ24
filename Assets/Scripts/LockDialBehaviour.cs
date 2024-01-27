@@ -6,6 +6,9 @@ using UnityEngine;
 public class LockDialBehaviour : MonoBehaviour
 {
     [SerializeField]
+    private Texture2D _cursorOverride;
+
+    [SerializeField]
     private int _numbersCount;
     [SerializeField]
     private bool _numbersIncreaseClockwise;
@@ -19,6 +22,25 @@ public class LockDialBehaviour : MonoBehaviour
         _transform = transform;
         _angleDelta = 1.0f / _numbersCount * 360.0f;
     }
+
+    // TODO: Only perform these when in interaction mode
+    private void OnMouseUpAsButton()
+    {
+        IncreaseNumber();
+    }
+
+    // TODO: Only perform these when in interaction mode
+    private void OnMouseEnter()
+    {
+        Cursor.SetCursor(_cursorOverride, Vector2.zero, CursorMode.Auto);
+    }
+
+    // TODO: Only perform these when in interaction mode
+    private void OnMouseExit()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+    }
+
 
     public void IncreaseNumber()
     {
@@ -38,7 +60,7 @@ public class LockDialBehaviour : MonoBehaviour
     private void SetRotation()
     {
         float direction = _numbersIncreaseClockwise ? 1.0f : -1.0f;
-        _transform.localRotation = Quaternion.Euler(0.0f, 0.0f, _angleDelta * _currentNumber * direction); // TODO: Change to y-axis
+        _transform.localRotation = Quaternion.Euler(0.0f, _angleDelta * _currentNumber * direction, 0.0f);
     }
 
     public int GetCurrentNumber()

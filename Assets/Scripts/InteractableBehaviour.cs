@@ -60,6 +60,7 @@ public class InteractableBehaviour : MonoBehaviour
         if (!_dragging)
             return;
 
+        // TODO: Transform around center of object => arbitrary transform
         Vector3 delta = Input.mousePositionDelta;
         transform.RotateAround(_camera.transform.up, delta.x * _rotationSens.value.x);
         transform.RotateAround(_camera.transform.right, delta.y * _rotationSens.value.y);
@@ -96,8 +97,9 @@ public class InteractableBehaviour : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
 
         Quaternion interactionModeRotation = _interactionModeTransform != null ? Quaternion.Inverse(_interactionModeTransform.localRotation) : Quaternion.identity;
+        Vector3 interactionModePositionOffset = _interactionModeTransform != null ? new Vector3(_interactionModeTransform.position.x, _interactionModeTransform.position.y, 0.0f) : Vector3.zero;
         transform.SetParent(camera.transform, worldPositionStays: false);
-        transform.SetLocalPositionAndRotation(1.5f * Vector3.forward, interactionModeRotation);
+        transform.SetLocalPositionAndRotation(1.5f * Vector3.forward - interactionModePositionOffset, interactionModeRotation);
     }
 
     public void UnsetInteractionMode()
