@@ -97,7 +97,7 @@ public class InteractableBehaviour : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
 
         Quaternion interactionModeRotation = _interactionModeTransform != null ? Quaternion.Inverse(_interactionModeTransform.localRotation) : Quaternion.identity;
-        Vector3 interactionModePositionOffset = _interactionModeTransform != null ? new Vector3(_interactionModeTransform.position.x, _interactionModeTransform.position.y, 0.0f) : Vector3.zero;
+        Vector3 interactionModePositionOffset = _interactionModeTransform != null ? new Vector3(_interactionModeTransform.localPosition.x, _interactionModeTransform.localPosition.y, 0.0f) : Vector3.zero;
         transform.SetParent(camera.transform, worldPositionStays: false);
         transform.SetLocalPositionAndRotation(1.5f * Vector3.forward - interactionModePositionOffset, interactionModeRotation);
     }
