@@ -3253,6 +3253,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 9172771936546149446, guid: 245afe0692a69ec4b80e61dd1cd31bfc,
+        type: 3}
+      propertyPath: MaxStepHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9172771936546149446, guid: 245afe0692a69ec4b80e61dd1cd31bfc,
+        type: 3}
+      propertyPath: LedgeAndDenivelationHandling
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
