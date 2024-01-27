@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Emissive
+    second: {fileID: 2100000, guid: 320caef1671c742478bbb80c7dc19fda, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: FSCMetalTreated
     second: {fileID: 2100000, guid: 7e4886f2b6293e740b9b62128e4d8a47, type: 2}
   - first:
