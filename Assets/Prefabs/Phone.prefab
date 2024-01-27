@@ -285,7 +285,8 @@ MonoBehaviour:
   contactPhoto: {fileID: 6063914916640688344}
   audioSource: {fileID: 6018514462110487322}
   messageAudioClip: {fileID: 8300000, guid: 7fdf0a45f87a5224085953aacafaa440, type: 3}
-  messageTimer: 3
+  messageTimer: 1
+  messageTimerAfterReply: 1
   messages:
   - sender: 0
     contactName: 0
@@ -293,7 +294,7 @@ MonoBehaviour:
     contactPhoto: {fileID: 21300000, guid: 4ac56e35e61b5984d966c3e5cce0afc0, type: 3}
     messageType: 2
     messageText: "\xA1Hey t\xEDo! Buenos d\xEDas, \xBFC\xF3mo est\xE1s? Ahora hace
-      tiempo que no nos vemos."
+      tiempo que no nos vemos.\U0001F60D\U0001F919\U0001F3A9\U0001F602\U0001F4F3"
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 0
@@ -360,6 +361,27 @@ MonoBehaviour:
     contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
     messageType: 3
     messageText: ok
+    messageImage: {fileID: 0}
+  - sender: 1
+    contactName: 1
+    contactStatus: 0
+    contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
+    messageType: 2
+    messageText: bueno, nose eli, que te jodan honestamente
+    messageImage: {fileID: 0}
+  - sender: 0
+    contactName: 1
+    contactStatus: 0
+    contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
+    messageType: 3
+    messageText: Vete a la mierda hijodeputa
+    messageImage: {fileID: 0}
+  - sender: 0
+    contactName: 1
+    contactStatus: 0
+    contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
+    messageType: 3
+    messageText: puto payaso
     messageImage: {fileID: 0}
   imageFullScreen: {fileID: 2713098880759688167}
   replyButton: {fileID: 3853387889370938683}

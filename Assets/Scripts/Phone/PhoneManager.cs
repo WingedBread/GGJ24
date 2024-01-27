@@ -29,6 +29,7 @@ public class PhoneManager : MonoBehaviour
 
     [Header("TIMER")]
     public int messageTimer;
+    public int messageTimerAfterReply;
 
     [Header("MESSAGE SEQUENCE")]
     public PhoneMessage[] messages;
@@ -39,7 +40,7 @@ public class PhoneManager : MonoBehaviour
 
     private int starterMessage = 0;
 
-    private bool hasPlayerFinishedMessaging = false;
+    private bool hasPlayerFinishedMessaging = true;
 
     public Button replyButton;
 
@@ -56,11 +57,11 @@ public class PhoneManager : MonoBehaviour
     void Update()
     {
         //For testing porpouses
-        if (Input.GetKeyDown(KeyCode.P)) StartMessagingPhoneOpen();
+        if (Input.GetKeyDown(KeyCode.P)) StartMessagingWithTimer();
 
-        if (Input.GetKeyDown(KeyCode.I)) StartMessagingPhoneClosed();
+        if (Input.GetKeyDown(KeyCode.I)) StartNewConversation();
 
-        //if (Input.GetKeyDown(KeyCode.O)) ResetPhone();
+        if (Input.GetKeyDown(KeyCode.O)) ResetPhone();
 
     }
     public void PlayerReply()
@@ -77,15 +78,19 @@ public class PhoneManager : MonoBehaviour
                     {
                         case PhoneMessage.MessageTypeEnum.Small:
                             message = Instantiate(smallMessagePrefab);
+                            container = Instantiate(smallMessagePrefab);
                             break;
                         case PhoneMessage.MessageTypeEnum.Medium:
                             message = Instantiate(mediumMessagePrefab);
+                            container = Instantiate(mediumMessagePrefab);
                             break;
                         case PhoneMessage.MessageTypeEnum.Big:
                             message = Instantiate(bigMessagePrefab);
+                            container = Instantiate(bigMessagePrefab);
                             break;
                         case PhoneMessage.MessageTypeEnum.File:
                             message = Instantiate(fileMessagePrefab);
+                            container = Instantiate(fileMessagePrefab);
                             if (messages[currentMessage].messageImage != null)
                             {
                                 message.transform.GetChild(1).GetComponent<Image>().sprite = messages[currentMessage].messageImage;
@@ -95,10 +100,10 @@ public class PhoneManager : MonoBehaviour
                             break;
                         default:
                             message = Instantiate(smallMessagePrefab);
+                            container = Instantiate(smallMessagePrefab);
                             Debug.LogError("MESSAGE TYPE ERROR");
                             break;
                     }
-                    container = Instantiate(mediumMessagePrefab);
                     if (messages[currentMessage].messageText != null) message.transform.GetChild(0).GetComponent<TMP_Text>().text = messages[currentMessage].messageText;
 
                     foreach (Transform child in container.transform)
@@ -113,15 +118,28 @@ public class PhoneManager : MonoBehaviour
 
 
                     message.transform.localPosition =
-                            new Vector3(355, -allmesages[allmesages.Count - 1].GetComponent<RectTransform>().rect.height + allmesages[allmesages.Count - 1].transform.localPosition.y - 30, 0);
+                            new Vector3(355, -allmesages[allmesages.Count - 1].GetComponent<RectTransform>().rect.height + allmesages[allmesages.Count - 1].transform.localPosition.y, 0);
 
                     allmesages.Add(container);
-                    hasPlayerFinishedMessaging = true;
                     currentMessage++;
+                    if (currentMessage < messages.Length && messages[currentMessage].sender != PhoneMessage.MessageSenderEnum.Reply)
+                    {
+                        replyButton.interactable = false;
+                        if(contactName.text == Enum.GetName(typeof(PhoneMessage.MessageContactNameEnum), messages[currentMessage].contactName))
+                        {
+                            InvokeRepeating("MessagesBehaviour", messageTimerAfterReply, messageTimer);
+                            Debug.Log("Contact Reply");
+                        }
+                    }
+                    if(currentMessage >= messages.Length)
+                    {
+                        hasPlayerFinishedMessaging = true;
+                        replyButton.interactable = false;
+                    }
                     ForceScrollViewToBottom();
-                    replyButton.interactable = false;
                 }
             }
+
         }
     }
 
@@ -192,9 +210,14 @@ public class PhoneManager : MonoBehaviour
                     }
 
                     allmesages.Add(message);
-                  
+
                     currentMessage++;
                     ForceScrollViewToBottom();
+                    if (currentMessage >= messages.Length)
+                    {
+                        hasPlayerFinishedMessaging = true;
+                        replyButton.interactable = false;
+                    }
                 }
                 else
                 {
@@ -203,36 +226,42 @@ public class PhoneManager : MonoBehaviour
                     replyButton.interactable = true;
                 }
             }
+            else
+            {
+                hasPlayerFinishedMessaging = true;
+                replyButton.interactable = false;
+            }
         }
     }
 
     public void ResetPhone()
     {
-        if (hasPlayerFinishedMessaging)
+        Debug.Log("Phone Reseted");
+        foreach (GameObject go in allmesages)
         {
-            foreach (GameObject go in allmesages)
-            {
-                Destroy(go);
-            }
-            hasPlayerFinishedMessaging = false;
-            replyButton.interactable = true;
-            starterMessage = currentMessage;
+            Destroy(go);
         }
+        hasPlayerFinishedMessaging = true;
+        replyButton.interactable = false;
+        starterMessage = currentMessage;
     }
 
-    public void StartMessagingPhoneOpen()
+    public void StartMessagingWithTimer()
     {
-        if (!IsInvoking("MessagesBehaviour"))
+        if (!IsInvoking("MessagesBehaviour") && currentMessage < messages.Length && !hasPlayerFinishedMessaging &&  contactName.text == Enum.GetName(typeof(PhoneMessage.MessageContactNameEnum), messages[currentMessage].contactName))
         {
             InvokeRepeating("MessagesBehaviour", 0, messageTimer);
             Debug.Log("Messages Start");
         }
         
     }
-    public void StartMessagingPhoneClosed()
+    public void StartNewConversation()
     {
-        ResetPhone();
-        MessagesBehaviour();
+        if (!IsInvoking("MessagesBehaviour") && currentMessage < messages.Length && hasPlayerFinishedMessaging)
+        {
+            hasPlayerFinishedMessaging = false;
+            MessagesBehaviour();
+        }
     }
 
     public void ForceScrollViewToBottom()
