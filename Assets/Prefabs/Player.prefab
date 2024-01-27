@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9071579954971855257}
   - component: {fileID: 7047763759160003458}
+  - component: {fileID: 2269425073259768094}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -47,3 +48,15 @@ MonoBehaviour:
   OrbitCamera: {fileID: 0}
   CameraFollowPoint: {fileID: 0}
   Character: {fileID: 0}
+--- !u!114 &2269425073259768094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5264421036751452215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4739727f4a027b24283a325cb63f2ac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
