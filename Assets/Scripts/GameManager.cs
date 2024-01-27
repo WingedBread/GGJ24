@@ -8,9 +8,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ScenesManager _scenesManager;
     [SerializeField] private List<int> _sceneBuildIndices;
     [SerializeField] private List<AudioClip> _transitionAudioClips;
-    [SerializeField] private AudioClip _firstToSecondAudioClip;
-    [SerializeField] private AudioClip _secondToThirdAudioClip;
-    [SerializeField] private AudioClip _thirdToFourthAudioClip;
 
     private GameSceneManager _currentGameSceneManager;
     private int _currentScene;
@@ -18,7 +15,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _currentScene = 0;
-        _scenesManager.Initialize();
+        _scenesManager.Initialize(this);
         _scenesManager.LoadInitialScene(_sceneBuildIndices[_currentScene]);
     }
 

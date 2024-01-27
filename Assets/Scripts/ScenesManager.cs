@@ -13,18 +13,19 @@ public class ScenesManager : MonoBehaviour
 
     [SerializeField]
     private AudioSource _audioSource;
-
     [SerializeField]
-    private GameManager _gameManager;
+    private AudioListener _audioListener;
 
+    private GameManager _gameManager;
     private Scene _currentScene;
     private int _sceneToLoadBuildIndex;
     private bool _isInitialSceneLoad;
     private bool _loadingComplete;
     private bool _audiosComplete;
 
-    public void Initialize()
+    public void Initialize(GameManager gameManager)
     {
+        _gameManager = gameManager;
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
@@ -53,6 +54,7 @@ public class ScenesManager : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(_currentScene);
 
+        _audioListener.enabled = true;
         _audioSource.Play();
         DOTween.Sequence().AppendInterval(_audioSource.clip.length).AppendCallback(OnClipCompleted);
     }
@@ -81,6 +83,7 @@ public class ScenesManager : MonoBehaviour
 
     private void OnClipCompleted()
     {
+        _audioListener.enabled = false;
         _audiosComplete = true;
         if (_loadingComplete)
             StartSceneAfterFadeOut();
