@@ -13,11 +13,9 @@ public class ScenesManager : MonoBehaviour
 
     [SerializeField]
     private AudioSource _audioSource;
-    [SerializeField]
-    private AudioClip _audioClip;
 
     [SerializeField]
-    private int _initialSceneBuildIndex;
+    private GameManager _gameManager;
 
     private Scene _currentScene;
     private int _sceneToLoadBuildIndex;
@@ -25,22 +23,25 @@ public class ScenesManager : MonoBehaviour
     private bool _loadingComplete;
     private bool _audiosComplete;
 
-    private void Start()
+    public void Initialize()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.sceneUnloaded += OnSceneUnloaded;
-
-        _isInitialSceneLoad = true;
-        SceneManager.LoadSceneAsync(_initialSceneBuildIndex, LoadSceneMode.Additive); // TODO: Make these proper constants
     }
 
-    private void OnDestroy()
+    public void Teardown()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
         SceneManager.sceneUnloaded -= OnSceneUnloaded;
     }
 
-    public void ChangeScene(int sceneBuildIndex)
+    public void LoadInitialScene(int initialSceneBuildIndex)
+    {
+        _isInitialSceneLoad = true;
+        SceneManager.LoadSceneAsync(initialSceneBuildIndex, LoadSceneMode.Additive);
+    }
+
+    public void ChangeScene(int sceneBuildIndex, AudioClip transitionAudioClip)
     {
         _loadingComplete = false;
         _audiosComplete = false;
@@ -52,9 +53,8 @@ public class ScenesManager : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(_currentScene);
 
-        _audioSource.clip = _audioClip;
         _audioSource.Play();
-        DOTween.Sequence().AppendInterval(_audioClip.length).AppendCallback(OnClipCompleted);
+        DOTween.Sequence().AppendInterval(_audioSource.clip.length).AppendCallback(OnClipCompleted);
     }
 
     private void OnSceneUnloaded(Scene unloadedScene)
@@ -66,6 +66,7 @@ public class ScenesManager : MonoBehaviour
     {
         _currentScene = loadedScene;
         SceneManager.SetActiveScene(loadedScene);
+        _gameManager.InitializeScene();
 
         if (_isInitialSceneLoad)
         {
@@ -75,13 +76,18 @@ public class ScenesManager : MonoBehaviour
 
         _loadingComplete = true;
         if (_audiosComplete)
-            _blackoutImage.DOFade(0.0f, _blackoutAlphaDuration);
+            StartSceneAfterFadeOut();
     }
 
     private void OnClipCompleted()
     {
         _audiosComplete = true;
         if (_loadingComplete)
-            _blackoutImage.DOFade(0.0f, _blackoutAlphaDuration);
+            StartSceneAfterFadeOut();
+    }
+
+    private void StartSceneAfterFadeOut()
+    {
+        _blackoutImage.DOFade(0.0f, _blackoutAlphaDuration).OnComplete(() => _gameManager.StartScene());
     }
 }
