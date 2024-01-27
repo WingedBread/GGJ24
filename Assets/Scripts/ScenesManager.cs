@@ -73,12 +73,15 @@ public class ScenesManager : MonoBehaviour
         if (_isInitialSceneLoad)
         {
             _isInitialSceneLoad = false;
-            return;
+            _gameManager.StartScene();
         }
 
-        _loadingComplete = true;
-        if (_audiosComplete)
-            StartSceneAfterFadeOut();
+        else
+        {
+            _loadingComplete = true;
+            if (_audiosComplete)
+                StartSceneAfterFadeOut();
+        }
     }
 
     private void OnClipCompleted()
