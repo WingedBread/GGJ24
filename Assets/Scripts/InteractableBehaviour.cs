@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class InteractableBehaviour : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class InteractableBehaviour : MonoBehaviour
     private Transform _originalParent;
     private Vector3 _originalLocalPosition;
     private Quaternion _originalLocalRotation;
+    private Vector3 _originalLocalScale;
     private bool _interactionModeEnabled;
     private Camera _camera;
     private bool _dragging;
@@ -93,8 +95,11 @@ public class InteractableBehaviour : MonoBehaviour
         _originalParent = transform.parent;
         _originalLocalPosition = transform.localPosition;
         _originalLocalRotation = transform.localRotation;
+        _originalLocalScale = transform.localScale;
         _camera = camera;
         Cursor.lockState = CursorLockMode.Confined;
+
+        transform.DOScale(0.75f * _originalLocalScale, 0.15f).From();
 
         Quaternion interactionModeRotation = _interactionModeTransform != null ? Quaternion.Inverse(_interactionModeTransform.localRotation) : Quaternion.identity;
         Vector3 interactionModePositionOffset = _interactionModeTransform != null ? new Vector3(_interactionModeTransform.localPosition.x, _interactionModeTransform.localPosition.y, 0.0f) : Vector3.zero;
@@ -107,6 +112,7 @@ public class InteractableBehaviour : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         transform.SetParent(_originalParent, worldPositionStays: false);
         transform.SetLocalPositionAndRotation(_originalLocalPosition, _originalLocalRotation);
+        transform.localScale = _originalLocalScale;
         _interactionModeEnabled = false;
     }
 }
