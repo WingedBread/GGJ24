@@ -56,18 +56,12 @@ public class PhoneManager : MonoBehaviour
     void Update()
     {
         //For testing porpouses
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            StartMessagingPhoneOpen();
-        }
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            StartMessagingPhoneClosed();
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            if (hasPlayerFinishedMessaging) ClosePhone();
-        }
+        if (Input.GetKeyDown(KeyCode.P)) StartMessagingPhoneOpen();
+
+        if (Input.GetKeyDown(KeyCode.I)) StartMessagingPhoneClosed();
+
+        //if (Input.GetKeyDown(KeyCode.O)) ResetPhone();
+
     }
     public void PlayerReply()
     {
@@ -212,23 +206,32 @@ public class PhoneManager : MonoBehaviour
         }
     }
 
-    public void ClosePhone()
+    public void ResetPhone()
     {
-        foreach (GameObject go in allmesages)
+        if (hasPlayerFinishedMessaging)
         {
-            Destroy(go);
+            foreach (GameObject go in allmesages)
+            {
+                Destroy(go);
+            }
+            hasPlayerFinishedMessaging = false;
+            replyButton.interactable = true;
+            starterMessage = currentMessage;
         }
-        hasPlayerFinishedMessaging = false;
-        replyButton.interactable = true;
-        starterMessage = currentMessage;
     }
 
     public void StartMessagingPhoneOpen()
     {
-        InvokeRepeating("MessagesBehaviour", 0, messageTimer);
+        if (!IsInvoking("MessagesBehaviour"))
+        {
+            InvokeRepeating("MessagesBehaviour", 0, messageTimer);
+            Debug.Log("Messages Start");
+        }
+        
     }
     public void StartMessagingPhoneClosed()
     {
+        ResetPhone();
         MessagesBehaviour();
     }
 
