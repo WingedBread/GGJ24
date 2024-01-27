@@ -13,7 +13,7 @@ public class InteractableBehaviour : MonoBehaviour
     private Vector2Reference _rotationSens;
     [SerializeField]
     private Outline _modelOutline;
-    [SerializeField]
+
     private GameObject pointPOV;
 
     private Transform _originalParent;
@@ -28,6 +28,7 @@ public class InteractableBehaviour : MonoBehaviour
     {
         _dragging = false;
         _interactionModeEnabled = false;
+        pointPOV = GameObject.FindGameObjectWithTag("PointPOV");
     }
 
     // NOTE: For some weird reason outline only works properly when they start enabled in the scene.
