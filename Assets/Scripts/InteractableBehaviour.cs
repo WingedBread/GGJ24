@@ -13,6 +13,8 @@ public class InteractableBehaviour : MonoBehaviour
     private Vector2Reference _rotationSens;
     [SerializeField]
     private Outline _modelOutline;
+    [SerializeField]
+    private GameObject pointPOV;
 
     private Transform _originalParent;
     private Vector3 _originalLocalPosition;
@@ -91,6 +93,7 @@ public class InteractableBehaviour : MonoBehaviour
 
     public void SetInteractionMode(Camera camera)
     {
+        pointPOV.SetActive(false);
         _interactionModeEnabled = true;
         _originalParent = transform.parent;
         _originalLocalPosition = transform.localPosition;
@@ -109,6 +112,7 @@ public class InteractableBehaviour : MonoBehaviour
 
     public void UnsetInteractionMode()
     {
+        pointPOV.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         transform.SetParent(_originalParent, worldPositionStays: false);
         transform.SetLocalPositionAndRotation(_originalLocalPosition, _originalLocalRotation);
