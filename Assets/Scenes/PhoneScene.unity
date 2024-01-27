@@ -342,6 +342,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6599137965943088541, guid: 657660a27f04d964f98b3a3820f62868,
+        type: 3}
+      propertyPath: messageTimer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6857122962271603242, guid: 657660a27f04d964f98b3a3820f62868,
         type: 3}
       propertyPath: m_LocalPosition.x
