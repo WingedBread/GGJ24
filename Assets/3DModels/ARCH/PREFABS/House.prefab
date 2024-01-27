@@ -2689,7 +2689,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 70
+  field of view: 65
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -2738,8 +2738,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -5437,6 +5437,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7353973064674166061}
     m_Modifications:
+    - target: {fileID: -9067739858836156023, guid: 2d6bac215b3238e48bc09842860fac91,
+        type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -9061711707265894532, guid: 2d6bac215b3238e48bc09842860fac91,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5661,6 +5666,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 128.143
+      objectReference: {fileID: 0}
+    - target: {fileID: -5214383208567554688, guid: 2d6bac215b3238e48bc09842860fac91,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -5173905570345709944, guid: 2d6bac215b3238e48bc09842860fac91,
         type: 3}
@@ -5997,6 +6007,11 @@ PrefabInstance:
       propertyPath: m_StaticShadowCaster
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4925819876047215761, guid: 2d6bac215b3238e48bc09842860fac91,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5277365313954739578, guid: 2d6bac215b3238e48bc09842860fac91,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6066,6 +6081,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561239492899195560, guid: 2d6bac215b3238e48bc09842860fac91,
+        type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7570724895338849948, guid: 2d6bac215b3238e48bc09842860fac91,
         type: 3}

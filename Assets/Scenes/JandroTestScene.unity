@@ -135,21 +135,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 204205409986469366, guid: ea2d173056663b24db42c05e003d8205,
-        type: 3}
-      propertyPath: m_ReceiveGI
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3343808274184522703, guid: ea2d173056663b24db42c05e003d8205,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6744521859545180894, guid: ea2d173056663b24db42c05e003d8205,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6988435851509516326, guid: ea2d173056663b24db42c05e003d8205,
         type: 3}
       propertyPath: m_Name
@@ -204,11 +189,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7499472326484166359, guid: ea2d173056663b24db42c05e003d8205,
-        type: 3}
-      propertyPath: m_ReceiveGI
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
