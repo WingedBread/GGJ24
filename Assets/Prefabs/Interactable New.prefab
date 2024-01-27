@@ -49,6 +49,7 @@ MonoBehaviour:
   _canBeRotated: 1
   _rotationSens: {fileID: 11400000, guid: 1c96ff3c1041cb94f827828c6740ed8f, type: 2}
   _modelOutline: {fileID: 0}
+  _distance: 0.5
 --- !u!1 &8883911437298584909
 GameObject:
   m_ObjectHideFlags: 0

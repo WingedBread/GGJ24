@@ -13,6 +13,8 @@ public class InteractableBehaviour : MonoBehaviour
     private Vector2Reference _rotationSens;
     [SerializeField]
     private Outline _modelOutline;
+    [SerializeField, Range(0.1f, 1.0f)]
+    private float _distance;
 
     private GameObject pointPOV;
 
@@ -108,7 +110,7 @@ public class InteractableBehaviour : MonoBehaviour
         Quaternion interactionModeRotation = _interactionModeTransform != null ? Quaternion.Inverse(_interactionModeTransform.localRotation) : Quaternion.identity;
         Vector3 interactionModePositionOffset = _interactionModeTransform != null ? new Vector3(_interactionModeTransform.localPosition.x, _interactionModeTransform.localPosition.y, 0.0f) : Vector3.zero;
         transform.SetParent(camera.transform, worldPositionStays: false);
-        transform.SetLocalPositionAndRotation(1.5f * Vector3.forward - interactionModePositionOffset, interactionModeRotation);
+        transform.SetLocalPositionAndRotation(_distance * Vector3.forward - interactionModePositionOffset, interactionModeRotation);
     }
 
     public void UnsetInteractionMode()
