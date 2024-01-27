@@ -7,6 +7,31 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Alfombra_001
+    second: {fileID: 2100000, guid: de2a004db4515044897651b717def9e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BR_Armario_001
+    second: {fileID: 2100000, guid: 6e1aa689a2919664f89dd0b35c6a6203, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BR_Cama
+    second: {fileID: 2100000, guid: e64dfac5bb87f4d4f81a8992e12d0d56, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BR_Tocador_001
+    second: {fileID: 2100000, guid: e7523ce94e92e0c48a8be1865b5b1786, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bath_Cortinas
+    second: {fileID: 2100000, guid: 5127aa45257d6e44f840f93257949fcb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door
     second: {fileID: 2100000, guid: 6dc71bf4413bdda48b31a0b9fc0705da, type: 2}
   - first:
@@ -47,6 +72,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Mirror
+    second: {fileID: 2100000, guid: 1ff0a6f893f46af46b57da604b1df904, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Nevera
     second: {fileID: 2100000, guid: f44e8cd7a6999af4a8f1fea09a61a4ee, type: 2}
   - first:
@@ -74,6 +104,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Roof
     second: {fileID: 2100000, guid: d5a03ef9c94860d428b096e093db006e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WC_Shower
+    second: {fileID: 2100000, guid: a1b8a62f0c6eccb42a25631b3bf79aaf, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
