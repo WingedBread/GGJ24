@@ -17,6 +17,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: FSCMetalTreated_Brass
+    second: {fileID: 2100000, guid: 008e328ad27b16c4a8bd82a8bcf93e85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: FSCPaintWallsDarkGrey
     second: {fileID: 2100000, guid: 6b116b5b7f9aa884f8e993e0b9ef47b9, type: 2}
   - first:
@@ -24,6 +29,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: FSCWoodCarpentry
     second: {fileID: 2100000, guid: 8329c07b27127c84ba11aede6e433ae5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlossVitro
+    second: {fileID: 2100000, guid: 432058198d2a7634b9bb39c0fab9cc38, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -59,6 +69,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Roof
     second: {fileID: 2100000, guid: d5a03ef9c94860d428b096e093db006e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhiteLightBulb
+    second: {fileID: 2100000, guid: eb7551e3e945268479e1d71df610e189, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -129,12 +144,12 @@ ModelImporter:
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
-    secondaryUVAreaDistortion: 15.000001
+    secondaryUVAreaDistortion: 15
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 1
+    secondaryUVMarginMethod: 0
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
-    secondaryUVPackMargin: 4
+    secondaryUVPackMargin: 10
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
