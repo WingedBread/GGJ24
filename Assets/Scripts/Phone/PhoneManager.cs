@@ -51,6 +51,7 @@ public class PhoneManager : MonoBehaviour
     private void Start()
     {
         audioSource.clip = messageAudioClip;
+        replyButton.interactable = false;
     }
     void Update()
     {
@@ -123,6 +124,7 @@ public class PhoneManager : MonoBehaviour
                     allmesages.Add(container);
                     hasPlayerFinishedMessaging = true;
                     currentMessage++;
+                    ForceScrollViewToBottom();
                     replyButton.interactable = false;
                 }
             }
@@ -184,7 +186,11 @@ public class PhoneManager : MonoBehaviour
 
                     message.transform.SetParent(scrollViewContent.transform, false);
 
-                    if (currentMessage == starterMessage) message.transform.localPosition = new Vector3(22, -45, 0);
+                    if (currentMessage == starterMessage)
+                    {
+                        message.transform.localPosition = new Vector3(22, -45, 0);
+                        audioSource.Play();
+                    }
                     else
                     {
                         message.transform.localPosition =
@@ -192,14 +198,15 @@ public class PhoneManager : MonoBehaviour
                     }
 
                     allmesages.Add(message);
-
-                    audioSource.Play();
+                  
                     currentMessage++;
+                    ForceScrollViewToBottom();
                 }
                 else
                 {
                     CancelInvoke("MessagesBehaviour");
                     Debug.Log("Canceled Messages");
+                    replyButton.interactable = true;
                 }
             }
         }
@@ -223,5 +230,11 @@ public class PhoneManager : MonoBehaviour
     public void StartMessagingPhoneClosed()
     {
         MessagesBehaviour();
+    }
+
+    public void ForceScrollViewToBottom()
+    {
+        Canvas.ForceUpdateCanvases();
+        scrollRect.verticalNormalizedPosition = 0;
     }
 }

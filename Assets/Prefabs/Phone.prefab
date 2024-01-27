@@ -285,7 +285,7 @@ MonoBehaviour:
   contactPhoto: {fileID: 6063914916640688344}
   audioSource: {fileID: 6018514462110487322}
   messageAudioClip: {fileID: 8300000, guid: 7fdf0a45f87a5224085953aacafaa440, type: 3}
-  messageTimer: 1
+  messageTimer: 3
   messages:
   - sender: 0
     contactName: 0
