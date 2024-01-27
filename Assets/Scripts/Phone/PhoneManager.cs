@@ -48,6 +48,9 @@ public class PhoneManager : MonoBehaviour
 
     public GameObject backButton;
 
+    public GameObject flashlightGameObject;
+    public Toggle flashlightToggle;
+
     //TODO
     //Create message sequencer until player reply
 
@@ -285,5 +288,11 @@ public class PhoneManager : MonoBehaviour
         {
             backButton.SetActive(false);
         }
+    }
+
+    public void FlashlightStatus()
+    {
+        if (flashlightGameObject != null) flashlightGameObject.SetActive(flashlightToggle.isOn);
+        else Debug.Log("FALTA LA LUZ DEL MOVIL - FLASHLIGHT STATUS: " + flashlightToggle.isOn);
     }
 }
