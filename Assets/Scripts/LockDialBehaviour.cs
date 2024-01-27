@@ -7,7 +7,6 @@ public class LockDialBehaviour : MonoBehaviour
 {
     [SerializeField]
     private Texture2D _cursorOverride;
-
     [SerializeField]
     private int _numbersCount;
     [SerializeField]
@@ -16,11 +15,13 @@ public class LockDialBehaviour : MonoBehaviour
     private Transform _transform;
     private int _currentNumber;
     private float _angleDelta;
+    private LockBehaviour _parentLock;
 
     private void Awake()
     {
         _transform = transform;
         _angleDelta = 1.0f / _numbersCount * 360.0f;
+        _parentLock = transform.parent.GetComponent<LockBehaviour>();
     }
 
     // TODO: Only perform these when in interaction mode
@@ -47,6 +48,7 @@ public class LockDialBehaviour : MonoBehaviour
         _currentNumber += 1;
         _currentNumber %= _numbersCount;
         SetRotation();
+        _parentLock.TryOpen();
     }
 
     public void DecreaseNumber()
@@ -55,6 +57,7 @@ public class LockDialBehaviour : MonoBehaviour
         _currentNumber += _numbersCount; // Prevent negative numbers that do not work well with the modulo operator
         _currentNumber %= _numbersCount;
         SetRotation();
+        _parentLock.TryOpen();
     }
 
     private void SetRotation()

@@ -25,7 +25,7 @@ public class LockBehaviour : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.L))
-            OpenSomething();
+            TryOpen(debug: true);
     }
 
     public bool CombinationIsCorrect()
@@ -47,29 +47,31 @@ public class LockBehaviour : MonoBehaviour
         return true;
     }
 
-    public void OpenSomething()
+    public void TryOpen(bool debug = false)
     {
         if (_isOpen)
             return;
 
         if (!CombinationIsCorrect())
         {
-            Debug.Log("[LockBehaviour] NOT OPENED");
-            Debug.Log("EXPECTED COMBINATION");
-            foreach (int number in _expectedCombination)
-                Debug.Log(number);
-            Debug.Log("ENTERED COMBINATION");
-            foreach (LockDialBehaviour lockDial in _lockDials)
-                Debug.Log(lockDial.GetCurrentNumber());
-            return /* false*/;
+            if (debug)
+            {
+                Debug.Log("[LockBehaviour] NOT OPENED");
+                Debug.Log("EXPECTED COMBINATION");
+                foreach (int number in _expectedCombination)
+                    Debug.Log(number);
+                Debug.Log("ENTERED COMBINATION");
+                foreach (LockDialBehaviour lockDial in _lockDials)
+                    Debug.Log(lockDial.GetCurrentNumber());
+            }
+            return;
         }
-        
+
         _isOpen = true;
-        Debug.Log("[LockBehaviour] OPENED");
+        if (debug) Debug.Log("[LockBehaviour] OPENED");
         DOTween.Sequence()
             .Append(_wireTransform.DOBlendableLocalMoveBy(new Vector3(0.0f, 0.002f, 0.0f), 0.5f))
-            .Append(_wireTransform.DOLocalRotate(new Vector3(0.0f, 130.0f , 0.0f), 0.5f));
+            .Append(_wireTransform.DOLocalRotate(new Vector3(0.0f, 130.0f, 0.0f), 0.5f));
         _audioSource.Play();
-        return /* true*/;
     }
 }
