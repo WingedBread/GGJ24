@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using KinematicCharacterController.Walkthrough.BasicMovement;
 
-public class GameManager : MonoBehaviour
+public class InteractionManager : MonoBehaviour
 {
     [SerializeField]
     private Camera _camera;
@@ -11,14 +9,12 @@ public class GameManager : MonoBehaviour
     private MyPlayer _player;
     [SerializeField]
     private GameObject _interactionModeLabel;
-
     [SerializeField]
     private LayerMask _interactablesLayerMask;
     [SerializeField, Range(0.0f, 10.0f)]
     private float _interactablesMaxDistance;
 
     private InteractableBehaviour _hightlightedInteractable;
-
     private bool _interactionModeEnabled;
     private InteractableBehaviour _interactionModeInteractable;
 

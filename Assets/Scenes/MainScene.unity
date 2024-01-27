@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 121334024}
   - component: {fileID: 121334025}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: InteractionManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   _interactablesLayerMask:
     serializedVersion: 2
     m_Bits: 8
-  _interactablesMaxDistance: 7
+  _interactablesMaxDistance: 4
 --- !u!1 &156798086
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,7 +966,7 @@ PrefabInstance:
     - target: {fileID: 6305363841841977116, guid: 657660a27f04d964f98b3a3820f62868,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00086456636
+      value: -0.23686168
       objectReference: {fileID: 0}
     - target: {fileID: 6857122962271603242, guid: 657660a27f04d964f98b3a3820f62868,
         type: 3}
