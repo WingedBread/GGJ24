@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
     {
         _hightlightedInteractable = null;
         _interactionModeEnabled = false;
-        Application.targetFrameRate = 60;
     }
 
     private void Update()
