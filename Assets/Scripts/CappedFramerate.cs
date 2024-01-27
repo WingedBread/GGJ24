@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class CappedFramerate : MonoBehaviour
 {
+    [SerializeField]
+    public int setTargetFPS = 60;
     // Start is called before the first frame update
     void Awake()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = setTargetFPS;
     }
 
 }
