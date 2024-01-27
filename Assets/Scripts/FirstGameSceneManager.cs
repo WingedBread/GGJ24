@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class FirstGameSceneManager : GameSceneManager
 {
+    [SerializeField] private PhoneManager _phoneManager;
+
     public override void InitializeScene()
     {
         Debug.Log("Initialize first scene");
