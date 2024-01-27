@@ -46,6 +46,8 @@ public class PhoneManager : MonoBehaviour
 
     public List<GameObject> allmesages;
 
+    public GameObject backButton;
+
     //TODO
     //Create message sequencer until player reply
 
@@ -53,6 +55,7 @@ public class PhoneManager : MonoBehaviour
     {
         audioSource.clip = messageAudioClip;
         replyButton.interactable = false;
+        backButton.SetActive(false);
     }
     void Update()
     {
@@ -62,6 +65,8 @@ public class PhoneManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I)) StartNewConversation();
 
         if (Input.GetKeyDown(KeyCode.O)) ResetPhone();
+
+        if (Input.GetKeyDown(KeyCode.L)) SetAct1State(true);
 
     }
     public void PlayerReply()
@@ -268,5 +273,17 @@ public class PhoneManager : MonoBehaviour
     {
         Canvas.ForceUpdateCanvases();
         scrollRect.verticalNormalizedPosition = 0;
+    }
+
+    public void SetAct1State(bool hasFinished)
+    {
+        if (hasFinished)
+        {
+            backButton.SetActive(true);
+        }
+        else
+        {
+            backButton.SetActive(false);
+        }
     }
 }
