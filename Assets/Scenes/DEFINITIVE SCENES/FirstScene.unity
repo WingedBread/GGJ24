@@ -878,6 +878,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e02f3c2ace35edf49b4c979adf48cff2, type: 3}
+--- !u!114 &792394660 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2386324667428706158, guid: e02f3c2ace35edf49b4c979adf48cff2,
+    type: 3}
+  m_PrefabInstance: {fileID: 792394659}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62246c3a62489754db9f716ee5f79b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &842337180
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,7 +953,7 @@ MonoBehaviour:
   _phoneManager: {fileID: 1948353634}
   _phoneInteractable: {fileID: 468705983}
   _keyInteractable: {fileID: 56248172}
-  _boxInteractable: {fileID: 0}
+  _boxInteractable: {fileID: 792394660}
   _shoesInteractable: {fileID: 698890352}
   _moveWithWasd: {fileID: 1212000315}
   _interactWithE: {fileID: 1605903305}

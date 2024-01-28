@@ -51,6 +51,9 @@ public class InteractionManager : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.E))
         {
+            if (!_gameSceneManager.OnInteractionMade(interactable))
+                return;
+
             if (interactable.type == InteractableBehaviour.InteractableType.Zoom)
                 EnterInteractionMode(interactable);
             else

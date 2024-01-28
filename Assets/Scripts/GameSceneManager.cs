@@ -19,4 +19,9 @@ public abstract class GameSceneManager : MonoBehaviour
     {
         return true;
     }
+
+    public virtual bool OnInteractionMade(InteractableBehaviour interactableBehaviour)
+    {
+        return true;
+    }
 }

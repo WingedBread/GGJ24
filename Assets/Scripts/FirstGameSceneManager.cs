@@ -58,22 +58,22 @@ public class FirstGameSceneManager : GameSceneManager
         _phoneManager.StartMessagingWithTimer();
 
         yield return new WaitUntil(() => _phoneInteractable.InteractionFinished);
-        //PlaySuspiro();
-        //_phoneInteractable.ResetInteractionFlags();
-        //_firstMessageCompleted = true;
+        PlaySuspiro();
+        _phoneInteractable.ResetInteractionFlags();
+        _firstMessageCompleted = true;
 
-        //yield return new WaitUntil(() => _boxOpened);
-        //_phoneManager.ResetPhone();
-        //_phoneManager.StartNewConversation();
-        //_phoneCoroutine = StartCoroutine(PhoneRinging(10.0f));
+        yield return new WaitUntil(() => _boxOpened);
+        _phoneManager.ResetPhone();
+        _phoneManager.StartNewConversation();
+        _phoneCoroutine = StartCoroutine(PhoneRinging(10.0f));
 
-        //yield return new WaitUntil(() => _phoneInteractable.HasBeenInteracted);
-        //StopCoroutine(_phoneCoroutine);
-        //_phoneManager.StartMessagingWithTimer();
+        yield return new WaitUntil(() => _phoneInteractable.HasBeenInteracted);
+        StopCoroutine(_phoneCoroutine);
+        _phoneManager.StartMessagingWithTimer();
 
-        //yield return new WaitUntil(() => _phoneInteractable.InteractionFinished);
-        //_phoneInteractable.ResetInteractionFlags();
-        //_secondMessageCompleted = true;
+        yield return new WaitUntil(() => _phoneInteractable.InteractionFinished);
+        _phoneInteractable.ResetInteractionFlags();
+        _secondMessageCompleted = true;
 
         yield return new WaitUntil(() => _shoesInteractable.HasBeenInteracted);
         yield return new WaitForSeconds(1.0f);
@@ -86,38 +86,47 @@ public class FirstGameSceneManager : GameSceneManager
         YieldInstruction waitSomeTime = new WaitForSeconds(interval);
         while (true)
         {
-            yield return waitSomeTime;
             _phoneManager.JustPlaySound();
+            yield return waitSomeTime;
         }
     }
 
     private void PlaySuspiro()
     {
-        _audioSource.clip = _suspiroAudioClip;
-        _audioSource.Play();
+        //_audioSource.clip = _suspiroAudioClip;
+        //_audioSource.Play();
     }
 
     public override bool IsObjectInteractable(InteractableBehaviour interactable)
     {
-        if (interactable == _boxInteractable)
+        if (interactable == _boxInteractable || interactable == _keyInteractable)
         {
             if (!_firstMessageCompleted)
                 return false;
-
-            if (_keyInteractable.HasBeenInteracted)
-            {
-                _boxOpened = true;
-                return false;
-            }
-
             return true;
         }
 
-        //if (interactable == _shoesInteractable)
-        //{
-        //    if (!_secondMessageCompleted)
-        //        return false;
-        //}
+        if (interactable == _shoesInteractable)
+        {
+            if (!_secondMessageCompleted)
+                return false;
+        }
+
+        return true;
+    }
+
+    public override bool OnInteractionMade(InteractableBehaviour interactable)
+    {
+        if (interactable == _boxInteractable)
+        {
+            if (_keyInteractable.HasBeenInteracted)
+            {
+                _boxOpened = true; // Open box
+                Debug.Log("BOX OPENED");
+                return false;
+            }
+            return true;
+        }
 
         return true;
     }
