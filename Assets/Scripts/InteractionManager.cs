@@ -55,7 +55,8 @@ public class InteractionManager : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(_camera.transform.position, _camera.transform.forward, out hit, _interactablesMaxDistance, _interactablesLayerMask))
         {
-            InteractableBehaviour interactable = hit.transform.parent.GetComponent<InteractableBehaviour>();
+            InteractableBehaviour interactable = hit.transform.GetComponent<InteractableBehaviour>();
+            if (interactable == null && hit.transform.parent != null) interactable = hit.transform.GetComponent<InteractableBehaviour>();
             return interactable;
         }
 
