@@ -208,6 +208,18 @@ PrefabInstance:
       addedObject: {fileID: 235849592}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abebdd4000ebd384d88e2d267e8ab9a8, type: 3}
+--- !u!114 &56248172 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6823883122387698958, guid: abebdd4000ebd384d88e2d267e8ab9a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 56248171}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62246c3a62489754db9f716ee5f79b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &227273009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -786,6 +798,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c69c8e929c263e4e97bcba729e1061c, type: 3}
+--- !u!114 &698890352 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3734852824172464066, guid: 8c69c8e929c263e4e97bcba729e1061c,
+    type: 3}
+  m_PrefabInstance: {fileID: 698890351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62246c3a62489754db9f716ee5f79b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &792394659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -916,9 +940,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _phoneManager: {fileID: 1948353634}
   _phoneInteractable: {fileID: 468705983}
-  _keyInteractable: {fileID: 0}
+  _keyInteractable: {fileID: 56248172}
   _boxInteractable: {fileID: 0}
-  _shoesInteractable: {fileID: 0}
+  _shoesInteractable: {fileID: 698890352}
+  _moveWithWasd: {fileID: 1212000315}
+  _interactWithE: {fileID: 1605903305}
   _audioSource: {fileID: 0}
   _suspiroAudioClip: {fileID: 0}
 --- !u!4 &879353081
@@ -1143,13 +1169,14 @@ GameObject:
   - component: {fileID: 1212000312}
   - component: {fileID: 1212000314}
   - component: {fileID: 1212000313}
+  - component: {fileID: 1212000315}
   m_Layer: 5
   m_Name: MoveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1212000312
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1269,6 +1296,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1212000311}
   m_CullTransparentMesh: 1
+--- !u!225 &1212000315
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212000311}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1309048820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,13 +1319,14 @@ GameObject:
   - component: {fileID: 1309048821}
   - component: {fileID: 1309048823}
   - component: {fileID: 1309048822}
+  - component: {fileID: 1309048824}
   m_Layer: 5
   m_Name: PhoneText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1309048821
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1406,6 +1446,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1309048820}
   m_CullTransparentMesh: 1
+--- !u!225 &1309048824
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309048820}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1605903301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,13 +1469,14 @@ GameObject:
   - component: {fileID: 1605903302}
   - component: {fileID: 1605903304}
   - component: {fileID: 1605903303}
+  - component: {fileID: 1605903305}
   m_Layer: 5
   m_Name: InteractText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1605903302
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1543,6 +1596,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1605903301}
   m_CullTransparentMesh: 1
+--- !u!225 &1605903305
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1605903301}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!4 &1626980328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8500099234728401215, guid: abebdd4000ebd384d88e2d267e8ab9a8,
