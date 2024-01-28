@@ -109,7 +109,7 @@ public class FirstGameSceneManager : GameSceneManager
     private void PlaySuspiro()
     {
         //_audioSource.clip = _suspiroAudioClip;
-        //_audioSource.Play();
+        _audioSource.Play();
     }
 
     public override bool IsObjectInteractable(InteractableBehaviour interactable)

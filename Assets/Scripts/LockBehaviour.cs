@@ -15,10 +15,12 @@ public class LockBehaviour : MonoBehaviour
     private AudioSource _audioSource;
 
     private bool _isOpen;
+    private bool _hasBeenOpened;
 
     private void Awake()
     {
         _isOpen = false;
+        _hasBeenOpened = false;
         _audioSource = GetComponent<AudioSource>();
     }
 
@@ -68,10 +70,16 @@ public class LockBehaviour : MonoBehaviour
         }
 
         _isOpen = true;
+        _hasBeenOpened = true;
         if (debug) Debug.Log("[LockBehaviour] OPENED");
         DOTween.Sequence()
             .Append(_wireTransform.DOBlendableLocalMoveBy(new Vector3(0.0f, 0.002f, 0.0f), 0.5f))
             .Append(_wireTransform.DOLocalRotate(new Vector3(0.0f, 130.0f, 0.0f), 0.5f));
         _audioSource.Play();
+    }
+
+    public bool HasBeenOpened()
+    {
+        return _hasBeenOpened;
     }
 }
