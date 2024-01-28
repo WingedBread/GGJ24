@@ -54,12 +54,13 @@ public class PhoneManager : MonoBehaviour
     //TODO
     //Create message sequencer until player reply
 
-    private void Start()
+    public void Initialize()
     {
         audioSource.clip = messageAudioClip;
         replyButton.interactable = false;
         backButton.SetActive(false);
     }
+
     void Update()
     {
         //For testing porpouses
@@ -69,9 +70,9 @@ public class PhoneManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.O)) ResetPhone();
 
-        if (Input.GetKeyDown(KeyCode.L)) SetAct1State(true);
-
+        if (Input.GetKeyDown(KeyCode.L)) SetAct1State(false);
     }
+
     public void PlayerReply()
     {
         if (!hasPlayerFinishedMessaging)
@@ -242,6 +243,11 @@ public class PhoneManager : MonoBehaviour
         }
     }
 
+    public void JustPlaySound()
+    {
+        audioSource.Play();
+    }
+
     public void ResetPhone()
     {
         Debug.Log("Phone Reseted");
@@ -278,16 +284,9 @@ public class PhoneManager : MonoBehaviour
         scrollRect.verticalNormalizedPosition = 0;
     }
 
-    public void SetAct1State(bool hasFinished)
+    public void SetAct1State(bool value)
     {
-        if (hasFinished)
-        {
-            backButton.SetActive(true);
-        }
-        else
-        {
-            backButton.SetActive(false);
-        }
+        backButton.SetActive(!value);
     }
 
     public void FlashlightStatus()
