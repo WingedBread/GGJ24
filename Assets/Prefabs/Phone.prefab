@@ -1060,8 +1060,7 @@ MonoBehaviour:
     contactPhoto: {fileID: 21300000, guid: beb4a79009d77ba4b840a18ad1ceabc8, type: 3}
     messageType: 1
     messageText: I miss her a lot too.... I'll be there, don't worry. Maybe I'll
-      go dress, you know <b>your hat and your nose</b> that's if I can find it, of
-      course.
+      go dress, you know <b>my hat and my nose</b> that's if I can find it, of course.
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 5
