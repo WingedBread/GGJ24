@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scenesManager: {fileID: 1321864309}
-  _sceneBuildIndices: 010000000200000003000000
+  _sceneBuildIndices: 01000000020000000300000004000000
   _transitionAudioClips:
   - {fileID: 8300000, guid: 3b1d046557069a64b8c51a5d32e01ca0, type: 3}
   - {fileID: 8300000, guid: 614e446d5ade2494581876e18c4a4357, type: 3}
