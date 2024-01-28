@@ -8,6 +8,7 @@ public class SecondGameSceneManager : GameSceneManager
     [SerializeField] private InteractableBehaviour _nose;
     [SerializeField] private InteractableBehaviour _paintings;
     [SerializeField] private InteractableBehaviour _lock;
+    [SerializeField] private InteractableBehaviour _frame;
     [SerializeField] private LockBehaviour _lockLock;
     [SerializeField] private ObjectAnimation _boxAnimation;
     [SerializeField] private InteractableBehaviour _phoneInteractable;
@@ -87,6 +88,10 @@ public class SecondGameSceneManager : GameSceneManager
         if (interactable == _nose)
         {
             return _secondMessageCompleted && _boxOpened;
+        }
+        if (interactable == _frame)
+        {
+            return _secondMessageCompleted;
         }
         return true;
     }

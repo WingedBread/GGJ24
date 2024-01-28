@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/DEFINITIVE SCENES/MenuScene.unity
     guid: 7776d1e85b253554e8b5b5b597b88596
   - enabled: 1
+    path: Assets/Scenes/DEFINITIVE SCENES/SecondScene.unity
+    guid: 1bbb6c6103928174baa2fa9e24a2d62e
+  - enabled: 1
     path: Assets/Scenes/DEFINITIVE SCENES/FirstScene.unity
     guid: 43fc3296dd3480e4f8640de055044c49
   - enabled: 1
