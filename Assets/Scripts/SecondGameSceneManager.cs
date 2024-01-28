@@ -45,6 +45,7 @@ public class SecondGameSceneManager : GameSceneManager
         _phoneManager.StartMessagingWithTimer();
         yield return new WaitUntil(() => _phoneManager.ConversationIsFinished());
         _forcedToHoldPhone = false;
+        _phoneManager.SetAct1State(false);
         yield return new WaitUntil(() => _phoneInteractable.InteractionFinished);
         _firstMessageCompleted = true;
 
