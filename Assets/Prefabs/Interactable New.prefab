@@ -103,6 +103,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.00024699594
       objectReference: {fileID: 0}
+    - target: {fileID: 6599137965943088541, guid: 657660a27f04d964f98b3a3820f62868,
+        type: 3}
+      propertyPath: messageAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 239fe3b1c2e56a349806843df1f8572a, type: 3}
     - target: {fileID: 6857122962271603242, guid: 657660a27f04d964f98b3a3820f62868,
         type: 3}
       propertyPath: m_LocalPosition.x
