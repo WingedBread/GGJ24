@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This game requieres audio to be played
+  m_text: This game requires audio to be played
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18c2559b9f22ced4d92bec7ff20d78fd, type: 2}
   m_sharedMaterial: {fileID: -6847666265820964104, guid: 18c2559b9f22ced4d92bec7ff20d78fd,
