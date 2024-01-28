@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1633274987}
-  m_IndirectSpecularColor: {r: 0.21718362, g: 0.23853745, b: 0.27343345, a: 1}
+  m_IndirectSpecularColor: {r: 0.2172052, g: 0.23855798, b: 0.27345502, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1357,9 +1357,94 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 31280613110548651, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 39252746299554169, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 98953992428028913, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 366581109404368405, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 434133472238647301, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1460025717975978943, guid: ea2d173056663b24db42c05e003d8205,
         type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1956737595891771302, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957389640717150537, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2168405734259292883, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2350540189349939796, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403607211378127954, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3554709083062019448, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3811907723362283166, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4595647992813812663, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889412832254531524, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889412832254531524, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889412832254531524, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 0.041568805
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975761031516710160, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_CustomShadowLayers
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5067696042495170422, guid: ea2d173056663b24db42c05e003d8205,
@@ -1367,11 +1452,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6167136226779556966, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6243247755063687056, guid: ea2d173056663b24db42c05e003d8205,
         type: 3}
       propertyPath: playerTarget
       value: 
       objectReference: {fileID: 1102340927}
+    - target: {fileID: 6972941692436656815, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6988435851509516326, guid: ea2d173056663b24db42c05e003d8205,
         type: 3}
       propertyPath: m_Name
@@ -1426,6 +1521,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7443824587298931373, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056380342833258418, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8660025309582707559, guid: ea2d173056663b24db42c05e003d8205,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
