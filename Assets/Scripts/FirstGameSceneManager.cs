@@ -75,6 +75,8 @@ public class FirstGameSceneManager : GameSceneManager
         //_phoneInteractable.ResetInteractionFlags();
         //_secondMessageCompleted = true;
 
+        yield return new WaitUntil(() => _shoesInteractable.HasBeenInteracted);
+        yield return new WaitForSeconds(1.0f);
         _gameManager.ChangeScene();
 
     }
@@ -111,11 +113,11 @@ public class FirstGameSceneManager : GameSceneManager
             return true;
         }
 
-        if (interactable == _shoesInteractable)
-        {
-            if (!_secondMessageCompleted)
-                return false;
-        }
+        //if (interactable == _shoesInteractable)
+        //{
+        //    if (!_secondMessageCompleted)
+        //        return false;
+        //}
 
         return true;
     }
