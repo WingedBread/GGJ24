@@ -122,6 +122,8 @@ public class FirstGameSceneManager : GameSceneManager
             if (_keyInteractable.HasBeenInteracted)
             {
                 _boxOpened = true; // Open box
+                ObjectAnimation openDoor = interactable.GetComponentInChildren<ObjectAnimation>();
+                openDoor.OpenClose();
                 Debug.Log("BOX OPENED");
                 return false;
             }
