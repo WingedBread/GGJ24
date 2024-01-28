@@ -506,8 +506,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -234}
-  m_SizeDelta: {x: 620.2764, y: 50}
+  m_AnchoredPosition: {x: 0, y: -204}
+  m_SizeDelta: {x: 1158.9121, y: 264.5618}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &776983453
 MonoBehaviour:
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Balada Triste de Trompeta
+  m_text: Make Me Laugh
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 18c2559b9f22ced4d92bec7ff20d78fd, type: 2}
   m_sharedMaterial: {fileID: -6847666265820964104, guid: 18c2559b9f22ced4d92bec7ff20d78fd,
@@ -557,8 +557,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 66.02
-  m_fontSizeBase: 66.02
+  m_fontSize: 125
+  m_fontSizeBase: 125
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
