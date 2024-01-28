@@ -5,15 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/OLD_MainScene.unity
-    guid: 1f191b2fc6169e94891ea45d3ad17822
   - enabled: 1
-    path: Assets/Scenes/JandroTestScene.unity
-    guid: d85da7bd140668343b1d12453768cbc4
+    path: Assets/Scenes/DEFINITIVE SCENES/BootScene.unity
+    guid: a9fcd419b7deab74fb66e9db7f425c29
   - enabled: 1
     path: Assets/Scenes/DEFINITIVE SCENES/FirstScene.unity
     guid: 43fc3296dd3480e4f8640de055044c49
+  - enabled: 1
+    path: Assets/Scenes/DEFINITIVE SCENES/LastScene.unity
+    guid: 5bbeba613827f0449b4ca9d6035c197e
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: d09656631668b8a4caa1363e3075bc3b,
       type: 2}
