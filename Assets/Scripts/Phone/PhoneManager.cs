@@ -294,4 +294,27 @@ public class PhoneManager : MonoBehaviour
         if (flashlightGameObject != null) flashlightGameObject.SetActive(flashlightToggle.isOn);
         else Debug.Log("FALTA LA LUZ DEL MOVIL - FLASHLIGHT STATUS: " + flashlightToggle.isOn);
     }
+    const int MAURICE_LAST_MESSAGE_INDEX = 4;
+    const int ELLI_LAST_MESSAGE_INDEX = 10;
+    const int JOHN_LAST_MESSAGE_INDEX = 19;
+    const int BEATRICE_LAST_MESSAGE_INDEX = 24;
+
+    public bool ConversationIsFinished()
+    {
+        if (currentMessage == MAURICE_LAST_MESSAGE_INDEX + 1)
+            return true;
+        if (currentMessage == ELLI_LAST_MESSAGE_INDEX + 1)
+            return true;
+        if (currentMessage == JOHN_LAST_MESSAGE_INDEX + 1)
+            return true;
+        if (currentMessage == BEATRICE_LAST_MESSAGE_INDEX + 1)
+            return true;
+
+        return false;
+    }
+
+    public void StartAtJohnConversation()
+    {
+        currentMessage = ELLI_LAST_MESSAGE_INDEX + 1;
+    }
 }

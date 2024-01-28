@@ -79,7 +79,12 @@ public class InteractionManager : MonoBehaviour
     private void UpdateInteractionMode()
     {
         if (Input.GetKeyUp(KeyCode.E))
+        {
+            if (!_gameSceneManager.OnInteractionMade(_interactionModeInteractable))
+                return;
+
             ExitInteractionMode();
+        }
     }
 
     private void JustInteract(InteractableBehaviour interactable)

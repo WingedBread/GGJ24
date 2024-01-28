@@ -26,6 +26,7 @@ public class FirstGameSceneManager : GameSceneManager
     private bool _secondMessageCompleted;
     private bool _firstInteractionCompleted;
     private bool _boxOpened;
+    private bool _forcedToHoldPhone;
 
     public override void InitializeScene(GameManager gameManager)
     {
@@ -56,9 +57,14 @@ public class FirstGameSceneManager : GameSceneManager
         //DOTween.Sequence().Append(_interactWithE.DOFade(1.0f, 0.5f)).AppendInterval(5.0f).Append(_interactWithE.DOFade(0.0f, 0.5f).OnComplete(() => _interactHintCompleted = true));
 
         yield return new WaitUntil(() => _phoneInteractable.HasBeenInteracted);
+        _forcedToHoldPhone = true;
         StopCoroutine(_phoneCoroutine);
         _interactWithE.DOFade(0.0f, 0.5f);
         _phoneManager.StartMessagingWithTimer();
+
+
+        yield return new WaitUntil(() => _phoneManager.ConversationIsFinished());
+        _forcedToHoldPhone = false;
 
         yield return new WaitUntil(() => _phoneInteractable.InteractionFinished);
         PlaySuspiro();
@@ -144,6 +150,11 @@ public class FirstGameSceneManager : GameSceneManager
                 return false;
             }
             return true;
+        }
+
+        if (interactable == _phoneInteractable)
+        {
+            return !_forcedToHoldPhone;
         }
 
         return true;
