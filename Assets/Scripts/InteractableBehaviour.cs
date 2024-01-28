@@ -28,9 +28,15 @@ public class InteractableBehaviour : MonoBehaviour
     private bool _interactionModeEnabled;
     private Camera _camera;
     private bool _dragging;
+    [HideInInspector]
+    public bool HasBeenInteracted;
+    [HideInInspector]
+    public bool InteractionFinished;
 
     private void Awake()
     {
+        HasBeenInteracted = false;
+        InteractionFinished = false;
         _dragging = false;
         _interactionModeEnabled = false;
         pointPOV = GameObject.FindGameObjectWithTag("PointPOV");
@@ -99,6 +105,7 @@ public class InteractableBehaviour : MonoBehaviour
 
     public void SetInteractionMode(Camera camera)
     {
+        HasBeenInteracted = true;
         switch (type)
         {
             case InteractableType.Zoom:
@@ -141,11 +148,18 @@ public class InteractableBehaviour : MonoBehaviour
         if (type != InteractableType.Zoom)
             return;
 
+        InteractionFinished = true;
         pointPOV.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         transform.SetParent(_originalParent, worldPositionStays: false);
         transform.SetLocalPositionAndRotation(_originalLocalPosition, _originalLocalRotation);
         transform.localScale = _originalLocalScale;
         _interactionModeEnabled = false;
+    }
+
+    public void ResetInteractionFlags()
+    {
+        HasBeenInteracted = false;
+        InteractionFinished = false;
     }
 }

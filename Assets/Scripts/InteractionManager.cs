@@ -17,11 +17,13 @@ public class InteractionManager : MonoBehaviour
     private InteractableBehaviour _hightlightedInteractable;
     private bool _interactionModeEnabled;
     private InteractableBehaviour _interactionModeInteractable;
+    private GameSceneManager _gameSceneManager;
 
     private void Awake()
     {
         _hightlightedInteractable = null;
         _interactionModeEnabled = false;
+        _gameSceneManager = FindFirstObjectByType<GameSceneManager>();
     }
 
     private void Update()
@@ -40,6 +42,9 @@ public class InteractionManager : MonoBehaviour
 
         InteractableBehaviour interactable = FindFirstInteractableObjectInSight();
         if (interactable == null)
+            return;
+
+        if (!_gameSceneManager.IsObjectInteractable(interactable))
             return;
 
         interactable.EnableHighlight();
