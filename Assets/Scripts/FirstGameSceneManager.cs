@@ -38,6 +38,7 @@ public class FirstGameSceneManager : GameSceneManager
         _boxOpened = false;
         _moveHintCompleted = false;
         _firstInteractionCompleted = false;
+        _interactHintCompleted = false;
     }
 
     public override IEnumerator StartScene()
@@ -54,6 +55,7 @@ public class FirstGameSceneManager : GameSceneManager
 
         yield return new WaitForSeconds(1.0f);
         _interactWithE.DOFade(1.0f, 0.5f);
+        _interactHintCompleted = true;
         //DOTween.Sequence().Append(_interactWithE.DOFade(1.0f, 0.5f)).AppendInterval(5.0f).Append(_interactWithE.DOFade(0.0f, 0.5f).OnComplete(() => _interactHintCompleted = true));
 
         yield return new WaitUntil(() => _phoneInteractable.HasBeenInteracted);
@@ -61,27 +63,28 @@ public class FirstGameSceneManager : GameSceneManager
         StopCoroutine(_phoneCoroutine);
         _interactWithE.DOFade(0.0f, 0.5f);
         _phoneManager.StartMessagingWithTimer();
-
-
         yield return new WaitUntil(() => _phoneManager.ConversationIsFinished());
         _forcedToHoldPhone = false;
 
         yield return new WaitUntil(() => _phoneInteractable.InteractionFinished);
         PlaySuspiro();
-        _phoneInteractable.ResetInteractionFlags();
         _firstMessageCompleted = true;
 
         yield return new WaitUntil(() => _boxOpened);
         yield return new WaitUntil(() => _disfrazInteractable.HasBeenInteracted);
         yield return new WaitForSeconds(1.0f);
 
+        _phoneInteractable.ResetInteractionFlags();
         _phoneManager.ResetPhone();
         _phoneManager.StartNewConversation();
         _phoneCoroutine = StartCoroutine(PhoneRinging(10.0f));
 
         yield return new WaitUntil(() => _phoneInteractable.HasBeenInteracted);
+        _forcedToHoldPhone = true;
         StopCoroutine(_phoneCoroutine);
         _phoneManager.StartMessagingWithTimer();
+        yield return new WaitUntil(() => _phoneManager.ConversationIsFinished());
+        _forcedToHoldPhone = false;
 
         yield return new WaitUntil(() => _phoneInteractable.InteractionFinished);
         _phoneInteractable.ResetInteractionFlags();
@@ -129,6 +132,11 @@ public class FirstGameSceneManager : GameSceneManager
         {
             if (!_secondMessageCompleted)
                 return false;
+        }
+
+        if (interactable == _phoneInteractable)
+        {
+            return _interactHintCompleted;
         }
 
         return true;
