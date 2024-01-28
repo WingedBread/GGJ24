@@ -898,187 +898,183 @@ MonoBehaviour:
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 4ac56e35e61b5984d966c3e5cce0afc0, type: 3}
     messageType: 2
-    messageText: "\xA1Hey t\xEDo! Buenos d\xEDas, \xBFc\xF3mo est\xE1s? Ahora hace
-      tiempo que no nos vemos."
+    messageText: Hey man! Good morning, how are you? Now it's been a while since
+      we've seen each other.
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 0
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 4ac56e35e61b5984d966c3e5cce0afc0, type: 3}
     messageType: 2
-    messageText: "Deber\xEDas salir de casa... \xA1Mira, he encontrado un meme que
-      te gustar\xE1!"
+    messageText: You should get out of the house... Look, I found a meme you'll like!
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 0
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 4ac56e35e61b5984d966c3e5cce0afc0, type: 3}
     messageType: 0
-    messageText: Maurice te ha enviado una foto.
+    messageText: Maurice sent you a photo.
     messageImage: {fileID: 21300000, guid: ca4360d4101313b42acc23df36130ea8, type: 3}
   - sender: 0
     contactName: 0
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 4ac56e35e61b5984d966c3e5cce0afc0, type: 3}
     messageType: 2
-    messageText: "Oye, hoy celebramos el cumplea\xF1os de mi hijo. \xBFPor qu\xE9
-      no te <b>vistes</b> y te pasas por casa a eso de las 12? Ya sabes, como en
-      los viejos tiempos..."
+    messageText: Hey, we're celebrating my son's birthday today, why don't you <b>dress
+      up</b> and come by the house around noon? You know, like old times....
     messageImage: {fileID: 0}
   - sender: 1
     contactName: 0
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 4ac56e35e61b5984d966c3e5cce0afc0, type: 3}
     messageType: 3
-    messageText: "Hola maurice... puede que me pase, s\xED."
+    messageText: Hello Maurice... I might pass, yes.
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 1
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
     messageType: 3
-    messageText: "\xA1Holaa!, \xA1mira qu\xE9 chulos!"
+    messageText: Hiiii there, look how cool!
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 1
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
     messageType: 0
-    messageText: Eli te ha enviado una foto.
+    messageText: Eli sent you a photo.
     messageImage: {fileID: 21300000, guid: 4dd3c9d328e3ba741ac93014811aeb45, type: 3}
   - sender: 0
     contactName: 1
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
     messageType: 2
-    messageText: "\xBFTe ha dicho maurice que hacen una barbacoa por el cumplea\xF1os
-      de su hijo? Yo voy a ir."
+    messageText: Did Maurice tell you they're having a barbecue for his son's birthday?
+      I'm going.
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 1
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
     messageType: 2
-    messageText: "Estar\xEDa bien que nos vi\xE9ramos despu\xE9s de tanto tiempo.
-      Espero verte ah\xED con esos <b>zapatos</b> tan graciosos."
+    messageText: It would be nice if we saw each other after so long. I hope to see
+      you there with those funny <b>shoes</b>.
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 1
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
     messageType: 3
-    messageText: "Te vendr\xE1 bien..."
+    messageText: It will be good for you...
     messageImage: {fileID: 0}
   - sender: 1
     contactName: 1
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 3138c53ae0b736144a689699f3f3cdb7, type: 3}
     messageType: 3
-    messageText: "Lo intentar\xE9."
+    messageText: I will try.
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 2
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 9383b09c299fdad4590115e1714d0001, type: 3}
     messageType: 2
-    messageText: "Oye, \xBFc\xF3mo est\xE1s? Supongo que te habr\xE1n dicho lo de
-      la barbacoa, creo que maurice quiere reunirnos a todos."
+    messageText: Hey, how are you? I guess they told you about the barbecue, I think
+      Maurice wants to get us all together.
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 2
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 9383b09c299fdad4590115e1714d0001, type: 3}
     messageType: 3
-    messageText: "Es un rom\xE1ntico, ya sabes..."
+    messageText: He's a romantic, you know....
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 2
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 9383b09c299fdad4590115e1714d0001, type: 3}
     messageType: 2
-    messageText: "Por cierto, \xBFhas arreglado la luz del <b>ba\xF1o</b>? :D"
+    messageText: By the way, have you fixed the <b>bathroom</b> light? :D
     messageImage: {fileID: 0}
   - sender: 1
     contactName: 2
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 9383b09c299fdad4590115e1714d0001, type: 3}
     messageType: 3
-    messageText: "\xAC\xAC No... \xA1A\xFAn no!"
+    messageText: "\xAC\xAC No... Not yet!"
     messageImage: {fileID: 0}
   - sender: 1
     contactName: 2
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 9383b09c299fdad4590115e1714d0001, type: 3}
     messageType: 3
-    messageText: "\xA1Pesado!"
+    messageText: Annoying!
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 2
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 9383b09c299fdad4590115e1714d0001, type: 3}
     messageType: 2
-    messageText: "Jejeje, espero que vayas, hace mucho que no sabemos de ti, despu\xE9s
-      de todo... ya sabes..."
+    messageText: Hehehe, I hope you go, we haven't heard from you for a long time,
+      after all... you know....
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 2
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 9383b09c299fdad4590115e1714d0001, type: 3}
     messageType: 3
-    messageText: "\xA1An\xEDmate!"
+    messageText: Cheer up!
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 2
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 9383b09c299fdad4590115e1714d0001, type: 3}
     messageType: 0
-    messageText: John te ha enviado una foto.
+    messageText: John sent you a photo.
     messageImage: {fileID: 21300000, guid: 45890c6cb16b7a4438e00a380501dc3b, type: 3}
   - sender: 1
     contactName: 2
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: 9383b09c299fdad4590115e1714d0001, type: 3}
     messageType: 3
-    messageText: Jajaja, gracias, me lo voy a pensar.
+    messageText: Hahaha, thanks, I'll think about it.
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 5
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: beb4a79009d77ba4b840a18ad1ceabc8, type: 3}
     messageType: 3
-    messageText: Hola...
+    messageText: Hello...
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 5
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: beb4a79009d77ba4b840a18ad1ceabc8, type: 3}
     messageType: 1
-    messageText: "Oye voy a ir a lo de maurice. Creo que me vendr\xE1 bien. Pero
-      quiero que est\xE9s t\xFA tambi\xE9n, no s\xE9 si podr\xEDa estar ah\xED sin
-      Anna..."
+    messageText: Hey, I'm going to Maurice's place. I think it will be good for me.
+      But I want you to be there too, I don't know if I could be there without Anna....
     messageImage: {fileID: 0}
   - sender: 1
     contactName: 5
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: beb4a79009d77ba4b840a18ad1ceabc8, type: 3}
     messageType: 1
-    messageText: "Yo tambi\xE9n la echo mucho de menos... Ah\xED estar\xE9, no te
-      preocupes. Quiz\xE1s vaya vestido, ya sabes <sprite  = \"hat\"> eso si lo encuentro,
-      claro."
+    messageText: I miss her a lot too.... I'll be there, don't worry. Maybe I'll
+      go dress, you know <b>my hat and my nose</b> that's if I can find it, of course.
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 5
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: beb4a79009d77ba4b840a18ad1ceabc8, type: 3}
     messageType: 3
-    messageText: Gracias <sprite  = "hat"> <3
+    messageText: Thank you <3
     messageImage: {fileID: 0}
   - sender: 0
     contactName: 5
     contactStatus: 0
     contactPhoto: {fileID: 21300000, guid: beb4a79009d77ba4b840a18ad1ceabc8, type: 3}
     messageType: 0
-    messageText: Beatrice te ha enviado una imagen.
+    messageText: Beatrice has sent you an image.
     messageImage: {fileID: 21300000, guid: c2d8c20d9a15b9d4ca346198a0a1e600, type: 3}
   imageFullScreen: {fileID: 2713098880759688167}
   replyButton: {fileID: 3853387889370938683}

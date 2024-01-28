@@ -10,6 +10,7 @@ public class FirstGameSceneManager : GameSceneManager
     [SerializeField] private InteractableBehaviour _keyInteractable;
     [SerializeField] private InteractableBehaviour _boxInteractable;
     [SerializeField] private InteractableBehaviour _shoesInteractable;
+    [SerializeField] private InteractableBehaviour _disfrazInteractable;
 
     [SerializeField] private CanvasGroup _moveWithWasd;
     [SerializeField] private CanvasGroup _interactWithE;
@@ -23,7 +24,9 @@ public class FirstGameSceneManager : GameSceneManager
     private bool _interactHintCompleted;
     private bool _firstMessageCompleted;
     private bool _secondMessageCompleted;
+    private bool _firstInteractionCompleted;
     private bool _boxOpened;
+    private bool _forcedToHoldPhone;
 
     public override void InitializeScene(GameManager gameManager)
     {
@@ -34,6 +37,7 @@ public class FirstGameSceneManager : GameSceneManager
         _firstMessageCompleted = false;
         _boxOpened = false;
         _moveHintCompleted = false;
+        _firstInteractionCompleted = false;
     }
 
     public override IEnumerator StartScene()
@@ -53,9 +57,14 @@ public class FirstGameSceneManager : GameSceneManager
         //DOTween.Sequence().Append(_interactWithE.DOFade(1.0f, 0.5f)).AppendInterval(5.0f).Append(_interactWithE.DOFade(0.0f, 0.5f).OnComplete(() => _interactHintCompleted = true));
 
         yield return new WaitUntil(() => _phoneInteractable.HasBeenInteracted);
+        _forcedToHoldPhone = true;
         StopCoroutine(_phoneCoroutine);
         _interactWithE.DOFade(0.0f, 0.5f);
         _phoneManager.StartMessagingWithTimer();
+
+
+        yield return new WaitUntil(() => _phoneManager.ConversationIsFinished());
+        _forcedToHoldPhone = false;
 
         yield return new WaitUntil(() => _phoneInteractable.InteractionFinished);
         PlaySuspiro();
@@ -63,6 +72,9 @@ public class FirstGameSceneManager : GameSceneManager
         _firstMessageCompleted = true;
 
         yield return new WaitUntil(() => _boxOpened);
+        yield return new WaitUntil(() => _disfrazInteractable.HasBeenInteracted);
+        yield return new WaitForSeconds(1.0f);
+
         _phoneManager.ResetPhone();
         _phoneManager.StartNewConversation();
         _phoneCoroutine = StartCoroutine(PhoneRinging(10.0f));
@@ -101,9 +113,16 @@ public class FirstGameSceneManager : GameSceneManager
     {
         if (interactable == _boxInteractable || interactable == _keyInteractable)
         {
-            if (!_firstMessageCompleted)
+            if (!_firstMessageCompleted || _firstInteractionCompleted)
                 return false;
             return true;
+        }
+
+        if (interactable == _disfrazInteractable)
+        {
+            if (_firstInteractionCompleted)
+                return true;
+            return false;
         }
 
         if (interactable == _shoesInteractable)
@@ -125,9 +144,17 @@ public class FirstGameSceneManager : GameSceneManager
                 ObjectAnimation openDoor = interactable.GetComponentInChildren<ObjectAnimation>();
                 openDoor.OpenClose();
                 Debug.Log("BOX OPENED");
+                interactable.DisableHighlight();
+                interactable.enabled = false;
+                _firstInteractionCompleted = true;
                 return false;
             }
             return true;
+        }
+
+        if (interactable == _phoneInteractable)
+        {
+            return !_forcedToHoldPhone;
         }
 
         return true;
