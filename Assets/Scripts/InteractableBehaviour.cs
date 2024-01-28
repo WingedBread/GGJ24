@@ -5,6 +5,9 @@ using DG.Tweening;
 
 public class InteractableBehaviour : MonoBehaviour
 {
+    public enum InteractableType { Zoom, Move, Disappear };
+
+    public InteractableType type;
     [SerializeField]
     private Transform _interactionModeTransform;
     [SerializeField]
@@ -96,21 +99,41 @@ public class InteractableBehaviour : MonoBehaviour
 
     public void SetInteractionMode(Camera camera)
     {
-        pointPOV.SetActive(false);
-        _interactionModeEnabled = true;
-        _originalParent = transform.parent;
-        _originalLocalPosition = transform.localPosition;
-        _originalLocalRotation = transform.localRotation;
-        _originalLocalScale = transform.localScale;
-        _camera = camera;
-        Cursor.lockState = CursorLockMode.Confined;
+        switch (type)
+        {
+            case InteractableType.Zoom:
+            {
+                pointPOV.SetActive(false);
+                _interactionModeEnabled = true;
+                _originalParent = transform.parent;
+                _originalLocalPosition = transform.localPosition;
+                _originalLocalRotation = transform.localRotation;
+                _originalLocalScale = transform.localScale;
+                _camera = camera;
+                Cursor.lockState = CursorLockMode.Confined;
 
-        transform.DOScale(0.75f * _originalLocalScale, 0.15f).From();
+                transform.DOScale(0.75f * _originalLocalScale, 0.15f).From();
 
-        Quaternion interactionModeRotation = _interactionModeTransform != null ? Quaternion.Inverse(_interactionModeTransform.localRotation) : Quaternion.identity;
-        Vector3 interactionModePositionOffset = _interactionModeTransform != null ? new Vector3(_interactionModeTransform.localPosition.x, _interactionModeTransform.localPosition.y, 0.0f) : Vector3.zero;
-        transform.SetParent(camera.transform, worldPositionStays: false);
-        transform.SetLocalPositionAndRotation(_distance * Vector3.forward - interactionModePositionOffset, interactionModeRotation);
+                Quaternion interactionModeRotation = _interactionModeTransform != null ? Quaternion.Inverse(_interactionModeTransform.localRotation) : Quaternion.identity;
+                Vector3 interactionModePositionOffset = _interactionModeTransform != null ? new Vector3(_interactionModeTransform.localPosition.x, _interactionModeTransform.localPosition.y, 0.0f) : Vector3.zero;
+                transform.SetParent(camera.transform, worldPositionStays: false);
+                transform.SetLocalPositionAndRotation(_distance * Vector3.forward - interactionModePositionOffset, interactionModeRotation);
+            }
+            break;
+            case InteractableType.Move:
+            {
+                if(gameObject.GetComponent<ObjectAnimation>() != null)
+                {
+                    gameObject.GetComponent<ObjectAnimation>().OpenClose();
+                }
+            }
+            break;
+            case InteractableType.Disappear:
+            {
+                gameObject.SetActive(false);
+            }
+            break;
+        }
     }
 
     public void UnsetInteractionMode()
