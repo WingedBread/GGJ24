@@ -508,11 +508,68 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1359103218001081943, guid: 657660a27f04d964f98b3a3820f62868,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.00006422617
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359103218001081943, guid: 657660a27f04d964f98b3a3820f62868,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.00007142477
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359103218001081943, guid: 657660a27f04d964f98b3a3820f62868,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.00007142477
+      objectReference: {fileID: 0}
     - target: {fileID: 6009286319925824442, guid: 657660a27f04d964f98b3a3820f62868,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1772153141}
+    - target: {fileID: 6305363841841977116, guid: 657660a27f04d964f98b3a3820f62868,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599137965943088541, guid: 657660a27f04d964f98b3a3820f62868,
+        type: 3}
+      propertyPath: messages.Array.data[16].sender
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599137965943088541, guid: 657660a27f04d964f98b3a3820f62868,
+        type: 3}
+      propertyPath: messages.Array.data[17].sender
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599137965943088541, guid: 657660a27f04d964f98b3a3820f62868,
+        type: 3}
+      propertyPath: messages.Array.data[22].sender
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599137965943088541, guid: 657660a27f04d964f98b3a3820f62868,
+        type: 3}
+      propertyPath: messages.Array.data[23].sender
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599137965943088541, guid: 657660a27f04d964f98b3a3820f62868,
+        type: 3}
+      propertyPath: messages.Array.data[13].messageType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599137965943088541, guid: 657660a27f04d964f98b3a3820f62868,
+        type: 3}
+      propertyPath: messages.Array.data[22].messageText
+      value: "Yo tambi\xE9n la echo mucho de menos... Ah\xED estar\xE9, no te preocupes.
+        Quiz\xE1s vaya vestido, ya sabes <sprite = \"hat\"> eso si lo encuentro,
+        claro."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599137965943088541, guid: 657660a27f04d964f98b3a3820f62868,
+        type: 3}
+      propertyPath: messages.Array.data[23].messageText
+      value: Gracias <sprite= "hat"> <3
+      objectReference: {fileID: 0}
     - target: {fileID: 6857122962271603242, guid: 657660a27f04d964f98b3a3820f62868,
         type: 3}
       propertyPath: m_LocalPosition.x
