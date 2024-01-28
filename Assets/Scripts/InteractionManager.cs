@@ -45,7 +45,12 @@ public class InteractionManager : MonoBehaviour
         interactable.EnableHighlight();
 
         if (Input.GetKeyUp(KeyCode.E))
-            EnterInteractionMode(interactable);
+        {
+            if (interactable.type == InteractableBehaviour.InteractableType.Zoom)
+                EnterInteractionMode(interactable);
+            else
+                JustInteract(interactable);
+        }
 
         _hightlightedInteractable = interactable;
     }
@@ -69,6 +74,11 @@ public class InteractionManager : MonoBehaviour
             ExitInteractionMode();
     }
 
+    private void JustInteract(InteractableBehaviour interactable)
+    {
+        interactable.SetInteractionMode(_camera);
+    }
+
     private void EnterInteractionMode(InteractableBehaviour interactable)
     {
         _interactionModeEnabled = true;
@@ -84,6 +94,7 @@ public class InteractionManager : MonoBehaviour
         _interactionModeEnabled = false;
         _interactionModeLabel.SetActive(false);
         _player.EnableInput();
+        _interactionModeInteractable = null;
 
         _interactionModeInteractable.UnsetInteractionMode();
     }
