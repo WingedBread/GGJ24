@@ -35,6 +35,7 @@ public class SecondGameSceneManager : GameSceneManager
     public override IEnumerator StartScene()
     {
         yield return new WaitForSeconds(1.0f);
+        _phoneManager.ResetPhone();
         _phoneManager.StartNewConversation();
         _phoneInteractable.ResetInteractionFlags();
 
