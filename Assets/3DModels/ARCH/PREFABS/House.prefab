@@ -2094,6 +2094,7 @@ Transform:
   - {fileID: 2363619938139876630}
   - {fileID: 4865749491345829686}
   - {fileID: 2236280255114692869}
+  - {fileID: 5557373907627118028}
   m_Father: {fileID: 7353973064674166061}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6919897968535953187
@@ -5004,6 +5005,80 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8274936804019185254, guid: cd99e900adb655c44b7fb75cde684a5f,
     type: 3}
   m_PrefabInstance: {fileID: 5355715487210515350}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5545299585770992839
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3208727344539096456}
+    m_Modifications:
+    - target: {fileID: 138237784088623371, guid: 317067c7504bee8468cee04a979e1320,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.770687
+      objectReference: {fileID: 0}
+    - target: {fileID: 138237784088623371, guid: 317067c7504bee8468cee04a979e1320,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.014730811
+      objectReference: {fileID: 0}
+    - target: {fileID: 138237784088623371, guid: 317067c7504bee8468cee04a979e1320,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.469052
+      objectReference: {fileID: 0}
+    - target: {fileID: 138237784088623371, guid: 317067c7504bee8468cee04a979e1320,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 138237784088623371, guid: 317067c7504bee8468cee04a979e1320,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 138237784088623371, guid: 317067c7504bee8468cee04a979e1320,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 138237784088623371, guid: 317067c7504bee8468cee04a979e1320,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 138237784088623371, guid: 317067c7504bee8468cee04a979e1320,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 138237784088623371, guid: 317067c7504bee8468cee04a979e1320,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 138237784088623371, guid: 317067c7504bee8468cee04a979e1320,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 765838593445061553, guid: 317067c7504bee8468cee04a979e1320,
+        type: 3}
+      propertyPath: m_Name
+      value: SombreroCopa_01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 317067c7504bee8468cee04a979e1320, type: 3}
+--- !u!4 &5557373907627118028 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 138237784088623371, guid: 317067c7504bee8468cee04a979e1320,
+    type: 3}
+  m_PrefabInstance: {fileID: 5545299585770992839}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5856685146977307784
 PrefabInstance:
