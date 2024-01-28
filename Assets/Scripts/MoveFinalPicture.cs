@@ -41,6 +41,7 @@ public class MoveFinalPicture : MonoBehaviour
             }
             if (creditsScene.activeSelf)
             {
+                //TODO: GUILLEM CAMBIAR ESTO
                 SceneManager.LoadScene(0);
             }
         }
