@@ -62,6 +62,7 @@ public class SecondGameSceneManager : GameSceneManager
         yield return new WaitUntil(() => _phoneManager.ConversationIsFinished());
         _forcedToHoldPhone = false;
         yield return new WaitUntil(() => _phoneInteractable.InteractionFinished);
+        _secondMessageCompleted = true;
 
         // HAT INTERACTION
         yield return new WaitUntil(() => _hat.HasBeenInteracted);
