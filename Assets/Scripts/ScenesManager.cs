@@ -47,6 +47,7 @@ public class ScenesManager : MonoBehaviour
         _loadingComplete = false;
         _audiosComplete = false;
         _sceneToLoadBuildIndex = sceneBuildIndex;
+        _audioSource.clip = transitionAudioClip;
         _blackoutImage.DOFade(1.0f, _blackoutAlphaDuration).OnComplete(OnFadeCompleted);
     }
 
@@ -56,7 +57,7 @@ public class ScenesManager : MonoBehaviour
 
         _audioListener.enabled = true;
         _audioSource.Play();
-        DOTween.Sequence().AppendInterval(_audioSource.clip.length).AppendCallback(OnClipCompleted);
+        DOTween.Sequence().AppendInterval(_audioSource.clip != null ? _audioSource.clip.length : 0.0f).AppendCallback(OnClipCompleted);
     }
 
     private void OnSceneUnloaded(Scene unloadedScene)

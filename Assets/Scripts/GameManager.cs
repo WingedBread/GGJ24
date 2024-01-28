@@ -27,18 +27,20 @@ public class GameManager : MonoBehaviour
     public void InitializeScene()
     {
         _currentGameSceneManager = FindFirstObjectByType<GameSceneManager>();
-        _currentGameSceneManager.InitializeScene();
+        _currentGameSceneManager.InitializeScene(this);
     }
 
     public void StartScene()
     {
-        StartCoroutine(_currentGameSceneManager.StartScene(this));
+        StartCoroutine(_currentGameSceneManager.StartScene());
     }
 
     public void ChangeScene()
     {
-        AudioClip transitionAudioClip = _transitionAudioClips[_currentScene];
+        AudioClip transitionAudioClip = null;
+        if (_currentScene < _transitionAudioClips.Count) transitionAudioClip = _transitionAudioClips[_currentScene];
         _currentScene += 1;
-        _scenesManager.ChangeScene(_currentScene, transitionAudioClip);
+        _currentScene %= _sceneBuildIndices.Count;
+        _scenesManager.ChangeScene(_sceneBuildIndices[_currentScene], transitionAudioClip);
     }
 }

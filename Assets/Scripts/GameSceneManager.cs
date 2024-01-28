@@ -3,8 +3,17 @@ using UnityEngine;
 
 public abstract class GameSceneManager : MonoBehaviour
 {
-    public abstract void InitializeScene();
-    public abstract IEnumerator StartScene(GameManager gameManager);
+    protected GameManager _gameManager;
+
+    public virtual void InitializeScene(GameManager gameManager)
+    {
+        _gameManager = gameManager;
+    }
+
+    public virtual IEnumerator StartScene()
+    {
+        yield break;
+    }
 
     public virtual bool IsObjectInteractable(InteractableBehaviour interactableBehaviour)
     {

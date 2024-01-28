@@ -17,8 +17,9 @@ public class FirstGameSceneManager : GameSceneManager
     private bool _secondMessageCompleted;
     private bool _boxOpened;
 
-    public override void InitializeScene()
+    public override void InitializeScene(GameManager gameManager)
     {
+        base.InitializeScene(gameManager);
         Debug.Log("Initialize first scene");
         _phoneManager.Initialize();
         _phoneManager.SetAct1State(true);
@@ -26,7 +27,7 @@ public class FirstGameSceneManager : GameSceneManager
         _boxOpened = false;
     }
 
-    public override IEnumerator StartScene(GameManager gameManager)
+    public override IEnumerator StartScene()
     {
         Debug.Log("Start first scene");
         
@@ -55,6 +56,9 @@ public class FirstGameSceneManager : GameSceneManager
         //yield return new WaitUntil(() => _phoneInteractable.InteractionFinished);
         //_phoneInteractable.ResetInteractionFlags();
         //_secondMessageCompleted = true;
+
+        _gameManager.ChangeScene();
+
     }
 
     private IEnumerator PhoneRinging(float interval)

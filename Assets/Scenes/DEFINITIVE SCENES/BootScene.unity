@@ -354,8 +354,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scenesManager: {fileID: 1321864309}
-  _sceneBuildIndices: 01000000
-  _transitionAudioClips: []
+  _sceneBuildIndices: 0100000002000000
+  _transitionAudioClips:
+  - {fileID: 8300000, guid: 41f0dd34d3971f945abaadf44392ec62, type: 3}
 --- !u!1 &940829206
 GameObject:
   m_ObjectHideFlags: 0
