@@ -94,9 +94,9 @@ public class InteractionManager : MonoBehaviour
         _interactionModeEnabled = false;
         _interactionModeLabel.SetActive(false);
         _player.EnableInput();
-        _interactionModeInteractable = null;
 
         _interactionModeInteractable.UnsetInteractionMode();
+        _interactionModeInteractable = null;
     }
 
 }
