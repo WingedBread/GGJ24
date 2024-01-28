@@ -138,6 +138,9 @@ public class InteractableBehaviour : MonoBehaviour
 
     public void UnsetInteractionMode()
     {
+        if (type != InteractableType.Zoom)
+            return;
+
         pointPOV.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         transform.SetParent(_originalParent, worldPositionStays: false);
