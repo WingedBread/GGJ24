@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8959284959060199212}
-  - {fileID: 302400115716195627}
+  - {fileID: 1776802631121876640}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6823883122387698958
@@ -50,7 +50,7 @@ MonoBehaviour:
   _interactionModeTransform: {fileID: 8959284959060199212}
   _canBeRotated: 0
   _rotationSens: {fileID: 11400000, guid: 1c96ff3c1041cb94f827828c6740ed8f, type: 2}
-  _modelOutline: {fileID: 6529049236645586962}
+  _modelOutline: {fileID: 5044586190137269145}
   _distance: 0.15
   HasBeenInteracted: 0
   InteractionFinished: 0
@@ -85,7 +85,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8500099234728401215}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!1001 &6564896190231645953
+--- !u!1001 &5152431973748194442
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -97,6 +97,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6305363841841977116, guid: 657660a27f04d964f98b3a3820f62868,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00024699594
       objectReference: {fileID: 0}
     - target: {fileID: 6857122962271603242, guid: 657660a27f04d964f98b3a3820f62868,
         type: 3}
@@ -158,17 +163,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 657660a27f04d964f98b3a3820f62868, type: 3}
---- !u!4 &302400115716195627 stripped
+--- !u!4 &1776802631121876640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6857122962271603242, guid: 657660a27f04d964f98b3a3820f62868,
     type: 3}
-  m_PrefabInstance: {fileID: 6564896190231645953}
+  m_PrefabInstance: {fileID: 5152431973748194442}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6529049236645586962 stripped
+--- !u!114 &5044586190137269145 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 108339267076957971, guid: 657660a27f04d964f98b3a3820f62868,
     type: 3}
-  m_PrefabInstance: {fileID: 6564896190231645953}
+  m_PrefabInstance: {fileID: 5152431973748194442}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
