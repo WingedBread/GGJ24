@@ -378,7 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 8
+  outlineWidth: 5
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -1087,74 +1087,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d3c4c6925153934b8074e3075ceed40, type: 3}
---- !u!1001 &1040326370
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2963181273536468536, guid: c6c6082b83a617846ab5c8a01bb6aab0,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.0036
-      objectReference: {fileID: 0}
-    - target: {fileID: 2963181273536468536, guid: c6c6082b83a617846ab5c8a01bb6aab0,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.9932
-      objectReference: {fileID: 0}
-    - target: {fileID: 2963181273536468536, guid: c6c6082b83a617846ab5c8a01bb6aab0,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.5151
-      objectReference: {fileID: 0}
-    - target: {fileID: 2963181273536468536, guid: c6c6082b83a617846ab5c8a01bb6aab0,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6983635
-      objectReference: {fileID: 0}
-    - target: {fileID: 2963181273536468536, guid: c6c6082b83a617846ab5c8a01bb6aab0,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.11542237
-      objectReference: {fileID: 0}
-    - target: {fileID: 2963181273536468536, guid: c6c6082b83a617846ab5c8a01bb6aab0,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.6811524
-      objectReference: {fileID: 0}
-    - target: {fileID: 2963181273536468536, guid: c6c6082b83a617846ab5c8a01bb6aab0,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.18707646
-      objectReference: {fileID: 0}
-    - target: {fileID: 2963181273536468536, guid: c6c6082b83a617846ab5c8a01bb6aab0,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -24.587
-      objectReference: {fileID: 0}
-    - target: {fileID: 2963181273536468536, guid: c6c6082b83a617846ab5c8a01bb6aab0,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -87.137
-      objectReference: {fileID: 0}
-    - target: {fileID: 2963181273536468536, guid: c6c6082b83a617846ab5c8a01bb6aab0,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -6.571
-      objectReference: {fileID: 0}
-    - target: {fileID: 4935890221860239491, guid: c6c6082b83a617846ab5c8a01bb6aab0,
-        type: 3}
-      propertyPath: m_Name
-      value: Lock
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c6c6082b83a617846ab5c8a01bb6aab0, type: 3}
 --- !u!20 &1102340923 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 20127477809793788, guid: c75e91cf060bbf04e89204fa400606df,
@@ -2403,8 +2335,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0, g: 1, b: 0.03731489, a: 1}
-  outlineWidth: 10
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 5
   precomputeOutline: 1
   bakeKeys:
   - {fileID: -4420810282019988501, guid: c9e9ddba7d96e4947bf36c786b22e560, type: 3}
@@ -4421,4 +4353,3 @@ SceneRoots:
   - {fileID: 792394659}
   - {fileID: 584106016}
   - {fileID: 698890351}
-  - {fileID: 1040326370}
